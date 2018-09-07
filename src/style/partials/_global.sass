@@ -1,0 +1,46 @@
+*::selection
+  background: rgba(darken($primary, 5%), 0.5)
+  color: black
+
+*::-moz-selection
+  background: rgba(darken($primary, 5%), 0.5)
+  color: black
+
+*::-webkit-selection
+  background: rgba(darken($primary, 5%), 0.5)
+  color: black
+
+body
+  font-family: 'Playfair Display', serif
+  min-width: 350px
+  &.no-scroll
+    overflow: hidden
+
+html
+  font-size: 16px
+  +media-breakpoint-up(md)
+    font-size: 18px
+  +media-breakpoint-up(lg)
+    font-size: 22px
+
+h1
+  font-family: 'Open Sans', sans-serif
+  font-weight: 800
+
+.respond
+  @extend %respond
+
+ul.list-inline
+  +list-inline
+
+ul.list-unstyled
+  +list-unstyled
+
+.wrap
+  max-width: $max-width
+  margin: 0 auto
+  padding-left: 15px
+  padding-right: 15px
+  +media-breakpoint-up(md)
+    padding-left: 40px
+    padding-right: 40px

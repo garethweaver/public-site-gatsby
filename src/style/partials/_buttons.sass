@@ -1,0 +1,19 @@
+button
+  cursor: pointer
+  border: none
+  font-weight: $font-weight-normal
+  color: $link-color
+  background-color: transparent
+  +hover
+    color: $link-hover-color
+    text-decoration: $link-hover-decoration
+    background-color: transparent
+    border-color: transparent
+  &:focus,
+  &.focus
+    text-decoration: $link-hover-decoration
+    border-color: transparent
+    box-shadow: none
+  &:disabled,
+  &.disabled
+    color: $btn-link-disabled-color

@@ -1,0 +1,21 @@
+@import '../../style/modules/base'
+
+.SiteFooter
+  color: $gray-600
+
+  &.wrap
+    padding-top: 30px
+    padding-bottom: 60px
+    +media-breakpoint-up(md)
+      padding-top: 60px
+      padding-bottom: 100px
+  ul
+    text-align: center
+    +media-breakpoint-up(md)
+      +list-inline
+      font-size: 18px
+  a,
+  .copyright,
+  button
+    display: inline-block
+    padding: 10px 40px

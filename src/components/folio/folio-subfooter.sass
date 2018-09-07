@@ -1,0 +1,17 @@
+@import '../../style/modules/base'
+
+.FolioSubfooter
+  text-align: center
+  margin-top: 40px
+  +media-breakpoint-up(lg)
+    margin-top: 80px
+  a
+    display: block
+    padding: 5px 20px
+    +media-breakpoint-up(sm)
+      display: inline-block
+      border-right: 1px solid $gray-500
+      &:last-child
+        border: none
+  .fa
+    margin-right: 10px
