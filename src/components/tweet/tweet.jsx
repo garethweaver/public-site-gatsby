@@ -44,7 +44,9 @@ class Tweet extends Component {
     return (
       <li className="Tweet">
         <div className="img-wrap">
-          <img src={this.props.tweet.user.profile_image_url_https} alt={this.props.tweet.user.screen_name} />
+          <img
+            src={this.props.tweet.user.profile_image_url_https}
+            alt={this.props.tweet.user.screen_name} />
         </div>
         <p dangerouslySetInnerHTML={{__html: this.parseTweet(this.props.tweet.text)}} />
       </li>
