@@ -8,7 +8,7 @@ module.exports = {
         short_name: 'GW',
         start_url: '/',
         background_color: '#ffffff',
-        theme_color: '#2ecc71',
+        theme_color: '#ffffff',
         display: 'minimal-ui',
         icon: 'src/images/site-icon.png', // This path is relative to the root of the site.
       },

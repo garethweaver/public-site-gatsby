@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import store from '../../store/store'
 import Tweet from '../tweet/tweet'
-
 import './modal.sass'
 
 class Modal extends Component {
