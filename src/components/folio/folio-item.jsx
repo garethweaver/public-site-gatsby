@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Link} from 'gatsby'
+import {Link, withPrefix} from 'gatsby'
 import './folio-item.sass'
 
 class FolioItem extends Component {
@@ -8,7 +8,7 @@ class FolioItem extends Component {
     return (
       <img
         className="respond"
-        src={`/images/thumb/${this.props.folioItem.thumb.name}`}
+        src={withPrefix(`/images/thumb/${this.props.folioItem.thumb.name}`)}
         alt={this.props.folioItem.title} />
     )
   }

@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {withPrefix} from 'gatsby'
 import './folio-image.sass'
 
 class FolioImage extends Component {
@@ -7,15 +8,15 @@ class FolioImage extends Component {
     let image = this.props.imageData.mobile ?
       (
         <>
-          <source srcSet={`/images/folio/${this.props.imageData.name}`} media="(min-width: 768px)" />
+          <source srcSet={withPrefix(`/images/folio/${this.props.imageData.name}`)} media="(min-width: 768px)" />
           <img
-            src={`/images/folio/${this.props.imageData.mobile.name}`}
+            src={withPrefix(`/images/folio/${this.props.imageData.mobile.name}`)}
             className="respond"
             alt={this.props.title} />
         </>
       ) :
         <img
-          src={`/images/folio/${this.props.imageData.name}`}
+          src={withPrefix(`/images/folio/${this.props.imageData.name}`)}
           className="respond"
           alt={this.props.title} />
 
