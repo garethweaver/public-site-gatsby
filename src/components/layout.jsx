@@ -5,7 +5,7 @@ import store from '../store/store'
 import SiteHeader from './site-header/site-header'
 import SiteFooter from './site-footer/site-footer'
 import Modal from './modal/modal'
-
+import '../style/screen.sass'
 
 class Layout extends Component {
 

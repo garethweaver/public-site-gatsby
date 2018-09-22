@@ -5,8 +5,6 @@ import FolioList from '../components/folio/folio-list'
 import Intro from '../components/intro/intro'
 import Layout from '../components/layout'
 
-import '../style/screen.sass'
-
 const IndexPage = ({data}) => (
   <Layout>
     <Helmet>
