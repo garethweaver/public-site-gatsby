@@ -2,6 +2,10 @@
 
 .FolioImage
   position: relative
-  background: $secondary
+  background: #ffffff
+  &.image-loaded picture
+    transition: opacity 0.2s
+  &.image-not-loaded picture
+    opacity: 0
   picture
     +absolute-top

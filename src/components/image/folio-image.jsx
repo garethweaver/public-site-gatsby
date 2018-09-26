@@ -15,6 +15,7 @@ class FolioImage extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize)
+    this.lazyLoadImage()
   }
 
   componentWillUnmount() {
@@ -24,32 +25,52 @@ class FolioImage extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.imageData !== this.props.imageData) {
       this.setState({
-        useImage: this.getImageForRes()
+        useImage: this.getImageForRes(),
+        imageLoaded: false
       })
+      this.lazyLoadImage()
     }
   }
 
   handleResize = (e) => {
-    this.setState({
-      useImage: this.getImageForRes()
-    })
+    let img = this.getImageForRes()
+    if (img !== this.state.useImage){
+      this.setState({
+        useImage: img
+      })
+    }
   }
 
   getImageForRes() {
-    return this.props.imageData.mobile && window.innerWidth < this.breakPoint  ?
-      this.props.imageData.mobile :
-      this.props.imageData
+    return (
+      this.props.imageData.mobile &&
+      typeof window !== 'undefined' &&
+      window.innerWidth < this.breakPoint ?
+        this.props.imageData.mobile :
+        this.props.imageData
+    )
   }
 
   calcImageRatio() {
     return (this.state.useImage.height / this.state.useImage.width) * 100 + '%'
   }
 
+  lazyLoadImage() {
+    let newImg = this.getImageForRes()
+    let img = new Image()
+    img.onload = () => {
+      this.setState({imageLoaded: true})
+    }
+    img.src = `/images/folio/${newImg.name}`
+  }
+
   imageTag() {
     let image = this.props.imageData.mobile ?
       (
         <>
-          <source srcSet={withPrefix(`/images/folio/${this.props.imageData.name}`)} media="(min-width: 768px)" />
+          <source
+            srcSet={withPrefix(`/images/folio/${this.props.imageData.name}`)}
+            media="(min-width: 768px)" />
           <img
             src={withPrefix(`/images/folio/${this.props.imageData.mobile.name}`)}
             className="respond"
@@ -70,7 +91,8 @@ class FolioImage extends Component {
 
   render() {
     return (
-      <div className={`FolioImage ${this.state.imageLoaded ? 'image-loaded' : 'image-not-loaded' }`}
+      <div
+        className={`FolioImage ${this.state.imageLoaded ? 'image-loaded' : 'image-not-loaded' }`}
         style={{paddingTop: this.calcImageRatio()}}>
         {this.imageTag()}
       </div>
