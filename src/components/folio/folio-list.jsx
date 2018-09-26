@@ -15,8 +15,10 @@ class FolioList extends Component {
 
   render() {
     return (
-      <div className="FolioList wrap">
-        {this.getFolioItems()}
+      <div className="wrap">
+        <div className="FolioList">
+          {this.getFolioItems()}
+        </div>
       </div>
     )
   }
