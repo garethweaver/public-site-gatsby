@@ -503,12 +503,12 @@
     "images": [
       {
         "base64": "",
-        "name": "gareth-weaver-1-lg.gif",
-        "height": 1163,
+        "name": "gareth-weaver-1-lg.jpg",
+        "height": 1166,
         "width": 1200,
         "mobile": {
-          "name": "gareth-weaver-1-sm.gif",
-          "height": 582,
+          "name": "gareth-weaver-1-sm.jpg",
+          "height": 583,
           "width": 600
         }
       }
