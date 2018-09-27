@@ -6,8 +6,8 @@ import Layout from '../components/layout'
 const NotFoundPage = () => (
   <Layout>
     <Helmet>
-      <title>G4r0th W4aver - Front-end Web Designer &amp; Developer</title>
       <body class="page-folio" />
+      <title>G4r0th We4ver - Front-end Web Designer &amp; Developer</title>
     </Helmet>
     <div className="FolioDetail wrap">
       <div className="inner">
