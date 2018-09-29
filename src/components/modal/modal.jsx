@@ -20,7 +20,7 @@ class Modal extends Component {
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeydown)
     document.body.classList.add('no-scroll')
-    fetch('http://www.garethweaver.com/assets/php/php-tweets/tweets.php')
+    fetch('https://www.garethweaver.com/assets/php/php-tweets/tweets.php')
       .then(result => {
         return result.json()
       }).then(result => {
