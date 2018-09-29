@@ -7,12 +7,12 @@ const MENU_DATA = [
   {
     title: 'Codepen',
     icon: 'fa-codepen',
-    link: 'http://codepen.io/garethdweaver'
+    link: 'https://codepen.io/garethdweaver'
   },
   {
     title: 'CV.pdf',
     icon: 'fa-file-pdf-o',
-    link: 'http://www.garethweaver.com/GarethWeaverCV.pdf'
+    link: 'https://www.garethweaver.com/GarethWeaverCV.pdf'
   },
   {
     title: 'Twitter',
