@@ -29,6 +29,7 @@ class Layout extends Component {
     return (
       <div>
         <Helmet>
+          <html lang="en" />
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:800|Playfair+Display" />
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
           <meta name="description" content="I&#39;m a front-end web designer and developer. I&#39;m always happy to have a chat about websites, hosting, technology or rugby. Why not send me a message?" />
