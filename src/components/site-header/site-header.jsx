@@ -50,8 +50,8 @@ class SiteHeader extends Component {
   toggleMobileMenu = (event) => {
     event.preventDefault()
     this.state.mobileMenu ?
-      store.dispatch({type: 'HIDE_MOB_MENU', data: false}) :
-      store.dispatch({type: 'SHOW_MOB_MENU', data: true})
+      store.dispatch({type: 'HIDE_MOB_MENU'}) :
+      store.dispatch({type: 'SHOW_MOB_MENU'})
   }
 
   mobileMenuClasses() {

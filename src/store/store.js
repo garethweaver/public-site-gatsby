@@ -5,24 +5,28 @@ const state = {
   mobileMenu: false
 }
 
-function rootReducer(state = {}, action) {
+let rootReducer = (state = {}, action) => {
   switch (action.type) {
     case 'SHOW_MODAL_HIDE_MOB_MENU':
       return Object.assign({}, state, {
-        modal: action.data.modal,
-        mobileMenu: action.data.mobileMenu
+        modal: true,
+        mobileMenu: false
       })
     case 'HIDE_MODAL':
       return Object.assign({}, state, {
-        modal: action.data
+        modal: false
       })
     case 'SHOW_MOB_MENU':
       return Object.assign({}, state, {
-        mobileMenu: action.data
+        mobileMenu: true
       })
     case 'HIDE_MOB_MENU':
       return Object.assign({}, state, {
-        mobileMenu: action.data
+        mobileMenu: false
+      })
+    case 'SET_IS_MOBILE':
+      return Object.assign({}, state, {
+        isMobile: action.data
       })
     default:
       return state

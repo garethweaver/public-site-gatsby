@@ -5,7 +5,7 @@ class MenuItem extends Component {
 
   handleClick = (event) => {
     event.preventDefault()
-    store.dispatch({type: 'SHOW_MODAL_HIDE_MOB_MENU', data: {modal: true, mobileMenu: false}})
+    store.dispatch({type: 'SHOW_MODAL_HIDE_MOB_MENU'})
   }
 
   externalLink() {
