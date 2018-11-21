@@ -1,100 +1,84 @@
 import React, {Component} from 'react'
 import {withPrefix} from 'gatsby'
+import store from '../../store/store'
 import './folio-image.sass'
 
 class FolioImage extends Component {
 
   constructor(props) {
     super(props)
-    this.breakPoint = 768
     this.state = {
-      useImage: this.getImageForRes(),
-      imageLoaded: false
+      imageLoaded: false,
+      isWebp: store.getState().webp,
+      isMobile: store.getState().isMobile
     }
-  }
-
-  componentDidMount() {
-    window.addEventListener('resize', this.handleResize)
+    this.unsubscribeStore = store.subscribe(() => {
+      this.setState({
+        isMobile: store.getState().isMobile
+      })
+    })
     this.lazyLoadImage()
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize)
+    this.unsubscribeStore()
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.imageData !== this.props.imageData) {
-      this.setState({
-        useImage: this.getImageForRes(),
-        imageLoaded: false
-      })
+      this.setState({ imageLoaded: false })
       this.lazyLoadImage()
     }
   }
 
-  handleResize = (e) => {
-    let img = this.getImageForRes()
-    if (img !== this.state.useImage){
-      this.setState({
-        useImage: img
-      })
-    }
+  getMobileImages() {
+    return this.props.imageData.filter(image => image.resolution === 'mobile')
   }
 
-  getImageForRes() {
-    return (
-      this.props.imageData.mobile &&
-      typeof window !== 'undefined' &&
-      window.innerWidth < this.breakPoint ?
-        this.props.imageData.mobile :
-        this.props.imageData
-    )
+  getDesktopImages() {
+    return this.props.imageData.filter(image => image.resolution === 'desktop')
   }
 
-  calcImageRatio() {
-    return (this.state.useImage.height / this.state.useImage.width) * 100 + '%'
+  getWebpImage(images) {
+    return images.filter(image => image.type === 'webp')
+  }
+
+  getImage() {
+    let image = this.state.isMobile && this.getMobileImages().length > 0 ?
+       this.getMobileImages() :
+       this.getDesktopImages()
+
+    image = this.state.isWebp && this.getWebpImage(image).length === 1 ?
+      this.getWebpImage(image)[0] :
+      image = image[0]
+
+    return image
+  }
+
+  calcImageRatio(image) {
+    return (image.height / image.width) * 100 + '%'
   }
 
   lazyLoadImage() {
-    let newImg = this.getImageForRes()
-    let img = new Image()
-    img.onload = () => {
-      this.setState({imageLoaded: true})
+    if (typeof Image !== 'undefined') {
+      let img = new Image()
+      let newImg = this.getImage()
+      img.onload = () => this.setState({imageLoaded: true})
+      img.src = `/images/folio/${newImg.name}`
     }
-    img.src = `/images/folio/${newImg.name}`
-  }
-
-  imageTag() {
-    let image = this.props.imageData.mobile ?
-      (
-        <>
-          <source
-            srcSet={withPrefix(`/images/folio/${this.props.imageData.name}`)}
-            media="(min-width: 768px)" />
-          <img
-            src={withPrefix(`/images/folio/${this.props.imageData.mobile.name}`)}
-            className="respond"
-            alt={this.props.title}
-            key={withPrefix(`/images/folio/${this.props.imageData.name}`)} />
-        </>
-      ) :
-        <img
-          src={withPrefix(`/images/folio/${this.props.imageData.name}`)}
-          className="respond"
-          alt={this.props.title}
-          key={withPrefix(`/images/folio/${this.props.imageData.name}`)} />
-
-    return (
-      <picture>{image}</picture>
-    )
   }
 
   render() {
+    let image = this.getImage()
+
     return (
       <div
         className={`FolioImage ${this.state.imageLoaded ? 'image-loaded' : 'image-not-loaded' }`}
-        style={{paddingTop: this.calcImageRatio()}}>
-        {this.imageTag()}
+        style={{paddingTop: this.calcImageRatio(image)}}>
+        <img
+          src={withPrefix(`/images/folio/${image.name}`)}
+          className="respond"
+          alt={this.props.title} />
       </div>
     )
   }

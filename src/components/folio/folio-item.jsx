@@ -4,13 +4,28 @@ import './folio-item.sass'
 
 class FolioItem extends Component {
 
+  getImageType(type) {
+    return this.props.folioItem.thumb.filter(img => img.type === type)[0] || false
+  }
+
   thumbnail() {
-    return (
-      <img
-        className="respond"
-        src={withPrefix(`/images/thumb/${this.props.folioItem.thumb.name}`)}
-        alt={this.props.folioItem.title} />
-    )
+    return this.getImageType('jpg') ?
+      <picture>
+        <source
+          type="image/webp"
+          srcSet={withPrefix(`/images/thumb/${this.getImageType('webp').name}`)} />
+        <img
+            className="respond"
+            src={withPrefix(`/images/thumb/${this.getImageType('jpg').name}`)}
+            alt={this.props.folioItem.title} />
+      </picture>
+      :
+      <picture>
+        <img
+            className="respond"
+            src={withPrefix(`/images/thumb/${this.getImageType('gif').name}`)}
+            alt={this.props.folioItem.title} />
+      </picture>
   }
 
   externalLink() {

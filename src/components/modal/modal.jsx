@@ -14,7 +14,7 @@ class Modal extends Component {
   }
 
   closeModal = (event) => {
-    store.dispatch({type: 'HIDE_MODAL', data: false})
+    store.dispatch({type: 'HIDE_MODAL'})
   }
 
   componentDidMount() {

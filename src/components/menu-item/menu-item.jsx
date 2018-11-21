@@ -5,7 +5,7 @@ class MenuItem extends Component {
 
   handleClick = (event) => {
     event.preventDefault()
-    store.dispatch({type: 'SHOW_MODAL_HIDE_MOB_MENU', data: {modal: true, mobileMenu: false}})
+    store.dispatch({type: 'SHOW_MODAL_HIDE_MOB_MENU'})
   }
 
   externalLink() {
@@ -14,7 +14,8 @@ class MenuItem extends Component {
         href={this.props.data.link}
         target="_blank"
         rel="noopener noreferrer"
-        className="MenuItem">
+        className="MenuItem"
+        aria-label={this.props.data.title}>
         {this.props.showIcon &&
           <span className={`fa ${this.props.data.icon}`}></span>
         }
@@ -25,7 +26,10 @@ class MenuItem extends Component {
 
   modalButton() {
     return (
-      <button onClick={this.handleClick} className="MenuItem">
+      <button
+        onClick={this.handleClick}
+        className="MenuItem"
+        aria-label="Open Twitter modal">
         {this.props.showIcon &&
           <span className={`fa ${this.props.data.icon}`}></span>
         }

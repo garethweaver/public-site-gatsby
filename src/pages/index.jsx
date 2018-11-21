@@ -26,8 +26,8 @@ export const pageQuery = graphql`
           title,
           url,
           thumb {
-            base64,
-            name
+            name,
+            type
           },
           external
         }
