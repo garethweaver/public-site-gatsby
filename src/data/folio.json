@@ -2,10 +2,16 @@
   {
     "id": "682a0817-9ed8-4f43-87e5-d667582d66fa",
     "url": "/hoher-backpacks",
-    "thumb": {
-      "type": "jpg",
-      "name": "hoher.jpg"
-    },
+    "thumb": [
+      {
+        "type": "jpg",
+        "name": "hoher.jpg"
+      },
+      {
+        "type": "webp",
+        "name": "hoher.webp"
+      }
+    ],
     "title": "Höher Backpacks",
     "external": false,
     "type": "Microsite",
@@ -55,10 +61,16 @@
   {
     "id": "12f8d82c-7c7e-4f24-8e2e-ad014ba507d0",
     "url": "/business-three-zero-fuel",
-    "thumb": {
-      "type": "jpg",
-      "name": "b30-fuel.jpg"
-    },
+    "thumb": [
+      {
+        "type": "jpg",
+        "name": "b30-fuel.jpg"
+      },
+      {
+        "type": "webp",
+        "name": "b30-fuel.webp"
+      }
+    ],
     "title": "Business Three Zero Fuel",
     "external": false,
     "type": "Ionic Application",
@@ -166,10 +178,16 @@
   {
     "id": "17447b0b-b3c1-4930-ae40-8b2eedfa93a1",
     "url": "/stella-mccartney-tumblr",
-    "thumb": {
-      "type": "jpg",
-      "name": "stella-mccartney.jpg"
-    },
+    "thumb": [
+      {
+        "type": "jpg",
+        "name": "stella-mccartney.jpg"
+      },
+      {
+        "type": "webp",
+        "name": "stella-mccartney.webp"
+      }
+    ],
     "title": "Stella McCartney Tumblr",
     "external": false,
     "type": "ES6 Application for Tumblr",
@@ -248,10 +266,12 @@
   {
     "id": "b97c8c81-88e9-487c-88aa-c9ce14bd0804",
     "url": "/dove-concept-adverts",
-    "thumb": {
-      "type": "gif",
-      "name": "dove-concept-adverts.gif"
-    },
+    "thumb": [
+      {
+        "type": "gif",
+        "name": "dove-concept-adverts.gif"
+      }
+    ],
     "title": "Dove Concept Advert Repository",
     "external": false,
     "type": "Angular Web Application",
@@ -359,10 +379,12 @@
   {
     "id": "2d3783eb-5ca5-41de-850b-aac21e0e1f6b",
     "url": "/embedded-media-player",
-    "thumb": {
-      "type": "gif",
-      "name": "media-player.gif"
-    },
+    "thumb": [
+      {
+        "type": "gif",
+        "name": "media-player.gif"
+      }
+    ],
     "title": "Embedded Media Player",
     "external": false,
     "type": "Javascript Widget",
@@ -413,10 +435,12 @@
   {
     "id": "9d605ade-d00d-4bde-afdb-1819c517b29f",
     "url": "/south-london-touch",
-    "thumb": {
-      "type": "gif",
-      "name": "south-london-touch.gif"
-    },
+    "thumb": [
+      {
+        "type": "gif",
+        "name": "south-london-touch.gif"
+      }
+    ],
     "title": "South London Touch Rugby",
     "external": false,
     "type": "Logo Redesign",
@@ -498,20 +522,32 @@
   {
     "id": "803665b7-029c-4454-94e9-35cc260e5635",
     "url": "http://codepen.io/garethdweaver/details/rOPpLW/",
-    "thumb": {
-      "type": "jpg",
-      "name": "snow-canvas.jpg"
-    },
+    "thumb": [
+      {
+        "type": "jpg",
+        "name": "snow-canvas.jpg"
+      },
+      {
+        "type": "webp",
+        "name": "snow-canvas.webp"
+      }
+    ],
     "title": "Snow Canvas",
     "external": true
   },
   {
     "id": "993af1b0-31de-44f1-b88e-7585c07e84d9",
     "url": "/big-sofa",
-    "thumb": {
-      "type": "jpg",
-      "name": "big-sofa.jpg"
-    },
+    "thumb": [
+      {
+        "type": "jpg",
+        "name": "big-sofa.jpg"
+      },
+      {
+        "type": "webp",
+        "name": "big-sofa.webp"
+      }
+    ],
     "title": "Big Sofa",
     "external": false,
     "type": "Fulltime Employment",
@@ -578,10 +614,16 @@
   {
     "id": "0f156bee-0ac5-49c8-8a5f-04518be054ee",
     "url": "/sd-osteopaths",
-    "thumb": {
-      "type": "jpg",
-      "name": "sd-osteopaths.jpg"
-    },
+    "thumb": [
+      {
+        "type": "jpg",
+        "name": "sd-osteopaths.jpg"
+      },
+      {
+        "type": "webp",
+        "name": "sd-osteopaths.webp"
+      }
+    ],
     "title": "St David's Osteopaths",
     "external": false,
     "type": "Website Design &amp; Build",
@@ -616,10 +658,16 @@
   {
     "id": "045a06b5-5d0e-4c8d-b0d5-5a4a301aa95b",
     "url": "/headless-ghost",
-    "thumb": {
-      "type": "jpg",
-      "name": "headless-ghost.jpg"
-    },
+    "thumb": [
+      {
+        "type": "jpg",
+        "name": "headless-ghost.jpg"
+      },
+      {
+        "type": "webp",
+        "name": "headless-ghost.webp"
+      }
+    ],
     "title": "Headless Ghost",
     "external": false,
     "type": "Website Design &amp; Build",
@@ -655,10 +703,12 @@
   {
     "id": "b0b28c6e-7122-492a-868c-bdf9085a2327",
     "url": "/cashbackcard",
-    "thumb": {
-      "type": "gif",
-      "name": "cashback-card.gif"
-    },
+    "thumb": [
+      {
+        "type": "gif",
+        "name": "cashback-card.gif"
+      }
+    ],
     "title": "Cashback&shy;Card.com",
     "external": false,
     "type": "Website Design",
@@ -692,10 +742,16 @@
   {
     "id": "1e5bb70c-ee26-48cd-bdcf-c9f402f22b53",
     "url": "/illustration",
-    "thumb": {
-      "type": "jpg",
-      "name": "illustration.jpg"
-    },
+    "thumb": [
+      {
+        "type": "jpg",
+        "name": "illustration.jpg"
+      },
+      {
+        "type": "webp",
+        "name": "illustration.webp"
+      }
+    ],
     "title": "Illustrations",
     "external": false,
     "type": "For Fun",
@@ -761,20 +817,28 @@
   {
     "id": "3b02c8e8-974c-4a5b-8a07-ff1c7abba2d6",
     "url": "http://codepen.io/garethdweaver/details/zdElu/",
-    "thumb": {
-      "type": "gif",
-      "name": "codepen.gif"
-    },
+    "thumb": [
+      {
+        "type": "gif",
+        "name": "codepen.gif"
+      }
+    ],
     "title": "Popular Codepen of 2014",
     "external": true
   },
   {
     "id": "d440a459-3261-4b9e-90f6-ba5c361b19c7",
     "url": "/camden-bar",
-    "thumb": {
-      "type": "jpg",
-      "name": "camden-bar.jpg"
-    },
+    "thumb": [
+      {
+        "type": "jpg",
+        "name": "camden-bar.jpg"
+      },
+      {
+        "type": "webp",
+        "name": "camden-bar.webp"
+      }
+    ],
     "title": "Camden Bar &amp; Kitchen",
     "external": false,
     "type": "Website",
@@ -809,10 +873,12 @@
   {
     "id": "5a83b21d-d232-434c-ab8f-afb1b77a07f6",
     "url": "/this-site",
-    "thumb": {
-      "type": "gif",
-      "name": "gareth-weaver.gif"
-    },
+    "thumb": [
+      {
+        "type": "gif",
+        "name": "gareth-weaver.gif"
+      }
+    ],
     "title": "This Website",
     "external": false,
     "type": "Static site",
