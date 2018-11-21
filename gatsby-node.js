@@ -21,8 +21,8 @@ exports.createPages = ({graphql, actions}) => {
                 url,
                 title,
                 thumb {
-                  base64,
-                  name
+                  name,
+                  type
                 },
                 external,
                 type,
@@ -32,16 +32,12 @@ exports.createPages = ({graphql, actions}) => {
                 live_site,
                 repository,
                 images {
-                  base64,
+                  resolution,
+                  type,
                   name,
                   height,
-                  width,
-                  mobile {
-                    name,
-                    height,
-                    width
-                  }
-                },
+                  width
+                }
                 next_page,
                 meta {
                   title,
