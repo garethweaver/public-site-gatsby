@@ -8,6 +8,17 @@ class MenuItem extends Component {
     store.dispatch({type: 'SHOW_MODAL_HIDE_MOB_MENU'})
   }
 
+  linkContent() {
+    return (
+      <>
+        {this.props.showIcon &&
+          <span className={`fa ${this.props.data.icon}`}></span>
+        }
+        <span className="text">{this.props.data.title}</span>
+      </>
+    )
+  }
+
   externalLink() {
     return (
       <a
@@ -16,10 +27,7 @@ class MenuItem extends Component {
         rel="noopener noreferrer"
         className="MenuItem"
         aria-label={this.props.data.title}>
-        {this.props.showIcon &&
-          <span className={`fa ${this.props.data.icon}`}></span>
-        }
-        <span className="text">{this.props.data.title}</span>
+        {this.linkContent()}
       </a>
     )
   }
@@ -30,10 +38,7 @@ class MenuItem extends Component {
         onClick={this.handleClick}
         className="MenuItem"
         aria-label="Open Twitter modal">
-        {this.props.showIcon &&
-          <span className={`fa ${this.props.data.icon}`}></span>
-        }
-        <span className="text">{this.props.data.title}</span>
+        {this.linkContent()}
       </button>
     )
   }
