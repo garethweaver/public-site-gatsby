@@ -20,20 +20,21 @@ class Modal extends Component {
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeydown)
     document.body.classList.add('no-scroll')
-    fetch('https://www.garethweaver.com/assets/php/php-tweets/tweets.php')
-      .then(result => {
-        return result.json()
-      }).then(result => {
-        this.setState({
-          tweets: result,
-          loading: false
-        })
-      })
+    this.fetchTweets()
   }
 
   componentWillUnmount() {
     document.body.classList.remove('no-scroll')
     document.removeEventListener('keydown', this.handleKeydown)
+  }
+
+  async fetchTweets() {
+    let tweets = await fetch('https://www.garethweaver.com/assets/php/php-tweets/tweets.php')
+    tweets = await tweets.json()
+    this.setState({
+      tweets: tweets,
+      loading: false
+    })
   }
 
   getLoader() {
