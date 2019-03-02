@@ -19,7 +19,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: './src/data/'
+        path: './src/data/',
       },
     },
     {

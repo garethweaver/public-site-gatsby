@@ -2,22 +2,22 @@ const MENU_DATA = [
   {
     title: 'Github',
     icon: 'fa-github-alt',
-    link: 'https://github.com/garethweaver'
+    link: 'https://github.com/garethweaver',
   },
   {
     title: 'Codepen',
     icon: 'fa-codepen',
-    link: 'https://codepen.io/garethdweaver'
+    link: 'https://codepen.io/garethdweaver',
   },
   {
     title: 'CV.pdf',
     icon: 'fa-file-pdf-o',
-    link: 'https://www.garethweaver.com/GarethWeaverCV.pdf'
+    link: 'https://www.garethweaver.com/GarethWeaverCV.pdf',
   },
   {
     title: 'Twitter',
-    icon: 'fa-twitter'
-  }
+    icon: 'fa-twitter',
+  },
 ]
 
 export default MENU_DATA
