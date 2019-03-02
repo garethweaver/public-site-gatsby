@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import {graphql} from 'gatsby'
+import { graphql } from 'gatsby'
 import FolioList from '../components/folio/folio-list'
 import Intro from '../components/intro/intro'
 import Layout from '../components/layout'

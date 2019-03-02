@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import FolioSubfooter from './folio-subfooter'
 import FolioImage from '../image/folio-image'
 import './folio-detail.sass'

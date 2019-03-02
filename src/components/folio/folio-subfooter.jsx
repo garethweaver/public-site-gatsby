@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {Link} from 'gatsby'
+import React, { Component } from 'react'
+import { Link } from 'gatsby'
 import './folio-subfooter.sass'
 
 class FolioSubfooter extends Component {
@@ -13,7 +13,7 @@ class FolioSubfooter extends Component {
               href={this.props.item.live_site}
               target="_blank"
               rel="noopener noreferrer">
-              <span className="fa fa-globe"></span>
+              <span className="fa fa-globe" />
               Visit
             </a>
           }
@@ -22,13 +22,13 @@ class FolioSubfooter extends Component {
               href={this.props.item.repository}
               target="_blank"
               rel="noopener noreferrer">
-              <span className="fa fa-github-alt"></span>
+              <span className="fa fa-github-alt" />
               Repo
             </a>
           }
           {this.props.item.next_page &&
             <Link to={`/folio${this.props.item.next_page}`}>
-              <span className="fa fa-arrow-circle-o-right"></span>
+              <span className="fa fa-arrow-circle-o-right" />
               Next
             </Link>
           }

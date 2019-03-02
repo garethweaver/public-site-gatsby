@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {Link, withPrefix} from 'gatsby'
+import React, { Component } from 'react'
+import { Link, withPrefix } from 'gatsby'
 import './folio-item.sass'
 
 class FolioItem extends Component {
