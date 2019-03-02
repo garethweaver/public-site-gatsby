@@ -1,12 +1,8 @@
-import React, {Component} from 'react'
-import store from '../../store/store'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { SHOW_MODAL_HIDE_MOB_MENU } from '../../store/actions'
 
 class MenuItem extends Component {
-
-  handleClick = (event) => {
-    event.preventDefault()
-    store.dispatch({type: 'SHOW_MODAL_HIDE_MOB_MENU'})
-  }
 
   linkContent() {
     return (
@@ -35,7 +31,7 @@ class MenuItem extends Component {
   modalButton() {
     return (
       <button
-        onClick={this.handleClick}
+        onClick={this.props.showModal}
         className="MenuItem"
         aria-label="Open Twitter modal">
         {this.linkContent()}
@@ -56,4 +52,10 @@ class MenuItem extends Component {
 
 }
 
-export default MenuItem
+const mapDispatchToProps = dispatch => {
+  return {
+    showModal: () => dispatch(SHOW_MODAL_HIDE_MOB_MENU),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(MenuItem)

@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
-import {withPrefix} from 'gatsby'
-import store from '../../store/store'
+import React, { Component } from 'react'
+import { withPrefix } from 'gatsby'
+import { connect } from 'react-redux'
 import './folio-image.sass'
 
 class FolioImage extends Component {
@@ -9,19 +9,8 @@ class FolioImage extends Component {
     super(props)
     this.state = {
       imageLoaded: false,
-      isWebp: store.getState().webp,
-      isMobile: store.getState().isMobile
     }
-    this.unsubscribeStore = store.subscribe(() => {
-      this.setState({
-        isMobile: store.getState().isMobile
-      })
-    })
     this.lazyLoadImage()
-  }
-
-  componentWillUnmount() {
-    this.unsubscribeStore()
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -44,11 +33,11 @@ class FolioImage extends Component {
   }
 
   getImage() {
-    let image = this.state.isMobile && this.getMobileImages().length > 0 ?
+    let image = this.props.isMobile && this.getMobileImages().length > 0 ?
        this.getMobileImages() :
        this.getDesktopImages()
 
-    image = this.state.isWebp && this.getWebpImage(image).length === 1 ?
+    image = this.props.isWebp && this.getWebpImage(image).length === 1 ?
       this.getWebpImage(image)[0] :
       image = image[0]
 
@@ -85,4 +74,11 @@ class FolioImage extends Component {
 
 }
 
-export default FolioImage
+const mapStateToProps = state => {
+  return {
+    isWebp: state.isWebp,
+    isMobile: state.isMobile,
+  }
+}
+
+export default connect(mapStateToProps)(FolioImage)

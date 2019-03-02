@@ -1,6 +1,6 @@
-import {createStore} from 'redux'
+import { createStore } from 'redux'
 
-let canWebP = () => {
+const testWebp = () => {
   return typeof document !== 'undefined' &&
     document
       .createElement('canvas')
@@ -8,21 +8,21 @@ let canWebP = () => {
       .indexOf('data:image/webp') === 0
 }
 
-let handleResize = (e) => {
+const handleResize = (e) => {
   let isMobile = typeof window !== 'undefined' && window.innerWidth < 768
   if (store.getState().isMobile !== isMobile) {
-    store.dispatch({type: 'SET_IS_MOBILE', data: isMobile});
+    store.dispatch({type: 'SET_IS_MOBILE', data: isMobile})
   }
 }
+
+const isWebp = testWebp()
 
 const defaultState = {
   modal: false,
   mobileMenu: false,
-  webp: false,
-  isMobile: true
+  isWebp: isWebp,
+  isMobile: true,
 }
-
-defaultState.webp = canWebP()
 
 let rootReducer = (state = {}, action) => {
   switch (action.type) {
@@ -52,15 +52,14 @@ let rootReducer = (state = {}, action) => {
   }
 }
 
-const store = createStore(rootReducer, defaultState)
+const store = createStore(
+  rootReducer,
+  defaultState,
+)
 
 if (typeof window !== 'undefined') {
   window.addEventListener('resize', handleResize)
   handleResize()
 }
-
-// store.subscribe(() => {
-//   console.log(store.getState())
-// })
 
 export default store

@@ -1,8 +1,9 @@
-import React, {Component} from 'react'
-import {Link} from 'gatsby'
+import React, { Component } from 'react'
+import { Link } from 'gatsby'
+import { connect } from 'react-redux'
+import { SHOW_MOB_MENU, HIDE_MOB_MENU } from '../../store/actions'
 import MenuItem from '../menu-item/menu-item'
 import MENU_DATA from '../../data/menu'
-import store from '../../store/store'
 import './site-header.sass'
 
 class SiteHeader extends Component {
@@ -11,13 +12,7 @@ class SiteHeader extends Component {
     super(props)
     this.state = {
       activeClass: 'is-scrolled-top',
-      mobileMenu: store.getState().mobileMenu
     }
-    this.unsubscribeStore = store.subscribe(() => {
-      this.setState({
-        mobileMenu: store.getState().mobileMenu
-      })
-    })
   }
 
   componentDidMount() {
@@ -26,7 +21,6 @@ class SiteHeader extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
-    this.unsubscribeStore()
   }
 
   handleScroll = (event) => {
@@ -49,15 +43,15 @@ class SiteHeader extends Component {
 
   toggleMobileMenu = (event) => {
     event.preventDefault()
-    this.state.mobileMenu ?
-      store.dispatch({type: 'HIDE_MOB_MENU'}) :
-      store.dispatch({type: 'SHOW_MOB_MENU'})
+    this.props.mobileMenu ?
+      this.props.hideMobileMenu() :
+      this.props.showMobileMenu()
   }
 
   mobileMenuClasses() {
     return `
       mobile-menu-toggle MenuItem d-md-none fa
-      ${this.state.mobileMenu ?
+      ${this.props.mobileMenu ?
         'fa-times' :
         'fa-bars'}
     `
@@ -77,7 +71,7 @@ class SiteHeader extends Component {
             className={this.mobileMenuClasses()}
             aria-label="Toggle mobile menu open closed" />
           <div className="clearfix d-md-none" />
-          <nav className={`menu ${this.state.mobileMenu ? 'mobile-menu-open' : 'mobile-menu-closed'}`}>
+          <nav className={`menu ${this.props.mobileMenu ? 'mobile-menu-open' : 'mobile-menu-closed'}`}>
             <ul>{this.getMenuItems()}</ul>
           </nav>
         </div>
@@ -87,4 +81,17 @@ class SiteHeader extends Component {
 
 }
 
-export default SiteHeader
+const mapStateToProps = state => {
+  return {
+    mobileMenu: state.mobileMenu,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    showMobileMenu: () => dispatch(SHOW_MOB_MENU),
+    hideMobileMenu: () => dispatch(HIDE_MOB_MENU),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SiteHeader)

@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import store from '../store/store'
+import { connect } from 'react-redux'
 import SiteHeader from './site-header/site-header'
 import SiteFooter from './site-footer/site-footer'
 import Modal from './modal/modal'
@@ -9,25 +9,9 @@ import '../style/screen.sass'
 
 class Layout extends Component {
 
-  constructor(props){
-    super(props)
-    this.state = {
-      modal: store.getState().modal
-    }
-    this.unsubscribeStore = store.subscribe(() => {
-      this.setState({
-        modal: store.getState().modal
-      })
-    })
-  }
-
-  componentWillUnmount() {
-    this.unsubscribeStore()
-  }
-
   render() {
     return (
-      <div>
+      <>
         <Helmet>
           <html lang="en" />
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:800|Playfair+Display" />
@@ -47,14 +31,20 @@ class Layout extends Component {
           transitionName="modal-animation"
           transitionEnterTimeout={500}
           transitionLeaveTimeout={500}>
-          {this.state.modal &&
+          {this.props.modal &&
             <Modal />
           }
         </ReactCSSTransitionGroup>
-      </div>
+      </>
     )
   }
 
 }
 
-export default Layout
+const mapStateToProps = state => {
+  return {
+    modal: state.modal,
+  }
+}
+
+export default connect(mapStateToProps)(Layout)

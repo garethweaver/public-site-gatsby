@@ -1,6 +1,7 @@
-import React, {Component} from 'react'
-import store from '../../store/store'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Tweet from '../tweet/tweet'
+import { HIDE_MODAL } from '../../store/actions'
 import './modal.sass'
 
 class Modal extends Component {
@@ -14,7 +15,7 @@ class Modal extends Component {
   }
 
   closeModal = (event) => {
-    store.dispatch({type: 'HIDE_MODAL'})
+    this.props.hideModal()
   }
 
   componentDidMount() {
@@ -87,4 +88,16 @@ class Modal extends Component {
 
 }
 
-export default Modal
+const mapStateToProps = state => {
+  return {
+    modal: state.modal,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    hideModal: () => dispatch(HIDE_MODAL),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Modal)
