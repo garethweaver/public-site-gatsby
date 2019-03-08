@@ -29,26 +29,31 @@ const defaultState = {
 let rootReducer = (state = {}, action) => {
   switch (action.type) {
     case 'SHOW_MODAL_HIDE_MOB_MENU':
-      return Object.assign({}, state, {
+      return {
+        ...state,
         modal: true,
         mobileMenu: false,
-      })
+      }
     case 'HIDE_MODAL':
-      return Object.assign({}, state, {
+      return {
+        ...state,
         modal: false,
-      })
+      }
     case 'SHOW_MOB_MENU':
-      return Object.assign({}, state, {
+      return {
+        ...state,
         mobileMenu: true,
-      })
+      }
     case 'HIDE_MOB_MENU':
-      return Object.assign({}, state, {
+      return {
+        ...state,
         mobileMenu: false,
-      })
+      }
     case 'SET_IS_MOBILE':
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isMobile: action.data,
-      })
+      }
     default:
       return state
   }
