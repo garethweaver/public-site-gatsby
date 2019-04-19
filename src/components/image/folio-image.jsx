@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withPrefix } from 'gatsby'
 import { connect } from 'react-redux'
+import { CSSTransition } from 'react-transition-group'
 import './folio-image.sass'
 
 class FolioImage extends Component {
@@ -9,12 +10,19 @@ class FolioImage extends Component {
     super(props)
     this.state = {
       imageLoaded: false,
+      imagePadding: '100%',
     }
+  }
+
+  componentDidMount() {
     this.lazyLoadImage()
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.imageData !== this.props.imageData) {
+    if (
+      prevProps.imageData !== this.props.imageData ||
+      prevProps.isMobile !== this.props.isMobile
+    ) {
       this.setState({ imageLoaded: false })
       this.lazyLoadImage()
     }
@@ -33,26 +41,30 @@ class FolioImage extends Component {
   }
 
   getImage() {
-    let image = this.props.isMobile && this.getMobileImages().length > 0 ?
-       this.getMobileImages() :
-       this.getDesktopImages()
+    let image = this.props.isMobile && this.getMobileImages().length > 0
+      ? this.getMobileImages()
+      : this.getDesktopImages()
 
-    image = this.props.isWebp && this.getWebpImage(image).length === 1 ?
-      this.getWebpImage(image)[0] :
-      image = image[0]
+    image = this.props.isWebp && this.getWebpImage(image).length === 1
+      ? this.getWebpImage(image)[0]
+      : image = image[0]
 
     return image
   }
 
   calcImageRatio(image) {
-    return (image.height / image.width) * 100 + '%'
+    let imagePadding = typeof window !== 'undefined'
+      ? (image.height / image.width) * 100 + '%'
+      : '100%'
+     this.setState({ imagePadding })
   }
 
   lazyLoadImage() {
     if (typeof Image !== 'undefined') {
       let img = new Image()
       let newImg = this.getImage()
-      img.onload = () => this.setState({imageLoaded: true})
+      this.calcImageRatio(newImg)
+      img.onload = () => this.setState({ imageLoaded: true })
       img.src = `/images/folio/${newImg.name}`
     }
   }
@@ -62,12 +74,18 @@ class FolioImage extends Component {
 
     return (
       <div
-        className={`FolioImage ${this.state.imageLoaded ? 'image-loaded' : 'image-not-loaded' }`}
-        style={{paddingTop: this.calcImageRatio(image)}}>
-        <img
-          src={withPrefix(`/images/folio/${image.name}`)}
-          className="respond"
-          alt={this.props.title} />
+        className="FolioImage"
+        style={{paddingTop: this.state.imagePadding}}>
+        <CSSTransition
+          in={this.state.imageLoaded}
+          unmountOnExit
+          timeout={300}
+          classNames="animation-image">
+          <img
+            src={withPrefix(`/images/folio/${image.name}`)}
+            className="respond"
+            alt={this.props.title} />
+        </CSSTransition>
       </div>
     )
   }
