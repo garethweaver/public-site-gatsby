@@ -6,12 +6,14 @@ import './folio-detail.sass'
 class FolioDetail extends Component {
 
   getItemImages() {
-    return this.props.folioItem.images.map((imageObj, i) => {
+    return this.props.data.images.map((imageObj, i) => {
       return (
-        <div key={i} className="image-wrapper folio-block">
+        <div
+          key={i}
+          className="image-wrapper folio-block">
           <FolioImage
             imageData={imageObj}
-            title={this.props.folioItem.title + ' ' + (i + 1)} />
+            title={this.props.data.title + ' ' + (i + 1)} />
         </div>
       )
     })
@@ -20,15 +22,15 @@ class FolioDetail extends Component {
   getItemMeta() {
     return (
       <ul className="folio-meta">
-        <li dangerouslySetInnerHTML={{__html: this.props.folioItem.type}} />
-        <li>{this.props.folioItem.tools}</li>
-        <li>{this.props.folioItem.year}</li>
+        <li dangerouslySetInnerHTML={{__html: this.props.data.type}} />
+        <li>{this.props.data.tools}</li>
+        <li>{this.props.data.year}</li>
       </ul>
     )
   }
 
   render() {
-    const item = this.props.folioItem
+    const item = this.props.data
 
     return (
       <div className="FolioDetail wrap">
@@ -36,7 +38,7 @@ class FolioDetail extends Component {
           <div className="folio-text folio-block">
             <h1 dangerouslySetInnerHTML={{__html: item.title}} />
             {this.getItemMeta(item)}
-            <div dangerouslySetInnerHTML={{__html: item.description}} />
+            <div dangerouslySetInnerHTML={{__html: item.html}} />
           </div>
           {this.getItemImages()}
           <FolioSubfooter item={item} />

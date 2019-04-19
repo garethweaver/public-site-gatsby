@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 import FolioItem from './folio-item'
-
 import './folio-list.sass'
 
 class FolioList extends Component {
 
-  getFolioItems() {
-    return this.props.data.allFolioJson.edges.map((folioItem, i) => {
+  getFolioItems(items) {
+    return items.map((folioItem, i) => {
       return (
-        <FolioItem folioItem={folioItem.node} key={i} />
+        <FolioItem
+          folioItem={folioItem.node}
+          key={i} />
       )
     })
   }
@@ -17,7 +19,35 @@ class FolioList extends Component {
     return (
       <div className="wrap">
         <div className="FolioList">
-          {this.getFolioItems()}
+          <StaticQuery
+            query={graphql`
+              query {
+                allMarkdownRemark(
+                  sort: {
+                    fields: [frontmatter___order],
+                    order: DESC
+                  }
+                ) {
+                  edges {
+                    node {
+                      html
+                      frontmatter {
+                        title
+                        url
+                        thumb {
+                          name
+                          type
+                        },
+                        external
+                      }
+                    }
+                  }
+                }
+              }
+            `}
+            render={
+              data => this.getFolioItems(data.allMarkdownRemark.edges)
+            } />
         </div>
       </div>
     )

@@ -28,7 +28,7 @@ class SiteHeader extends Component {
       window.pageYOffset > 0 ?
         'is-scrolled' :
         'is-scrolled-top'
-    this.setState({activeClass: className})
+    this.setState({ activeClass: className })
   }
 
   getMenuItems() {

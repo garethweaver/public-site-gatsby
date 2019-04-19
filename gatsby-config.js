@@ -15,7 +15,7 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-sass',
-    'gatsby-transformer-json',
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
