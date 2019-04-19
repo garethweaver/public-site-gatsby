@@ -24,7 +24,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await getFolioPageData(graphql)
 
   result.data.allMarkdownRemark.edges.forEach(edge => {
-    if (!edge.node.frontmatter.external){
+    if (!edge.node.frontmatter.external) {
       createPage ({
         path: edge.node.frontmatter.url,
         component: folioTemplate,

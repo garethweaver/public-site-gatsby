@@ -1,11 +1,32 @@
-.modal-animation-enter
-  transform: translateY(-100%)
-  &.modal-animation-enter-active
-    transform: translateY(0)
-    transition: 0.4s all
-
-.modal-animation-leave
-  transform: translateY(0)
-  &.modal-animation-leave-active
+.animation-modal
+  &-enter
     transform: translateY(-100%)
-    transition: 0.4s all
+    .modal-inner
+      opacity: 0
+
+  &-enter-active
+    transform: translateY(0)
+    transition: all 0.3s
+    .modal-inner
+      opacity: 1
+      transition: all 0.4s ease 0.1s
+
+  &-exit
+    transform: translateY(0)
+
+  &-exit-active
+    transform: translateY(-100%)
+    transition: all 0.3s
+
+.animation-image
+  &-enter
+    opacity: 0
+
+  &-enter-active
+    opacity: 1
+    transition: opacity 0.3s
+
+  &-exit
+    opacity: 0
+
+  &-exit-active

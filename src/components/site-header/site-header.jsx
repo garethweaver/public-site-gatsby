@@ -24,11 +24,13 @@ class SiteHeader extends Component {
   }
 
   handleScroll = (event) => {
-    let className =
+    let activeClass =
       window.pageYOffset > 0 ?
         'is-scrolled' :
         'is-scrolled-top'
-    this.setState({ activeClass: className })
+    if (this.state.activeClass !== activeClass) {
+      this.setState({ activeClass })
+    }
   }
 
   getMenuItems() {
