@@ -1,72 +1,35 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
 const path = require('path')
 
-exports.createPages = ({graphql, actions}) => {
-  const {createPage} = actions
-
-  return new Promise((resolve, reject) => {
-    const folioTemplate = path.resolve('src/templates/folio-detail.jsx')
-    resolve(
-      graphql(`
-        {
-          allFolioJson {
-            edges {
-              node {
-                id,
-                url,
-                title,
-                thumb {
-                  name,
-                  type
-                },
-                external,
-                type,
-                year,
-                description,
-                tools,
-                live_site,
-                repository,
-                images {
-                  resolution,
-                  type,
-                  name,
-                  height,
-                  width
-                }
-                next_page,
-                meta {
-                  title,
-                  description
-                }
-              }
+const getFolioPageData = async (graphql) => {
+  let query = await graphql(`
+    {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              url
+              external
             }
           }
         }
-      `).then((result) => {
+      }
+    }
+  `)
+  return query
+}
 
-        if (result.errors) { reject(result.errors) }
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const folioTemplate = path.resolve('src/templates/folio-detail.jsx')
+  const result = await getFolioPageData(graphql)
 
-        result.data.allFolioJson.edges.forEach((edge) => {
-          if (!edge.node.external){
-            createPage ({
-              path: 'folio' + edge.node.url,
-              component: folioTemplate,
-              context: {
-                slug: 'folio' + edge.node.url,
-                id: edge.node.id,
-                allFolioJson: result.data.allFolioJson
-              }
-            })
-          }
-        })
-
-        return
+  result.data.allMarkdownRemark.edges.forEach(edge => {
+    if (!edge.node.frontmatter.external){
+      createPage ({
+        path: edge.node.frontmatter.url,
+        component: folioTemplate,
+        context: {}
       })
-    )
+    }
   })
 }

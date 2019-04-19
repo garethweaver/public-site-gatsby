@@ -12,7 +12,7 @@
     "gatsby-plugin-react-helmet": "3.0.7",
     "gatsby-plugin-sass": "2.0.10",
     "gatsby-source-filesystem": "2.0.23",
-    "gatsby-transformer-json": "2.1.8",
+    "gatsby-transformer-remark": "^2.3.1",
     "node-sass": "4.11.0",
     "react": "16.8.3",
     "react-addons-css-transition-group": "15.6.2",

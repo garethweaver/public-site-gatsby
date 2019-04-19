@@ -5,7 +5,7 @@ import './folio-item.sass'
 class FolioItem extends Component {
 
   getImageType(type) {
-    return this.props.folioItem.thumb.filter(img => img.type === type)[0] || false
+    return this.props.folioItem.frontmatter.thumb.filter(img => img.type === type)[0] || false
   }
 
   thumbnail() {
@@ -15,23 +15,23 @@ class FolioItem extends Component {
           type="image/webp"
           srcSet={withPrefix(`/images/thumb/${this.getImageType('webp').name}`)} />
         <img
-            className="respond"
-            src={withPrefix(`/images/thumb/${this.getImageType('jpg').name}`)}
-            alt={this.props.folioItem.title} />
+          className="respond"
+          src={withPrefix(`/images/thumb/${this.getImageType('jpg').name}`)}
+          alt={this.props.folioItem.frontmatter.title} />
       </picture>
       :
       <picture>
         <img
-            className="respond"
-            src={withPrefix(`/images/thumb/${this.getImageType('gif').name}`)}
-            alt={this.props.folioItem.title} />
+          className="respond"
+          src={withPrefix(`/images/thumb/${this.getImageType('gif').name}`)}
+          alt={this.props.folioItem.frontmatter.title} />
       </picture>
   }
 
   externalLink() {
     return (
       <a
-        href={this.props.folioItem.url}
+        href={this.props.folioItem.frontmatter.url}
         target="_blank"
         rel="noopener noreferrer">
         {this.thumbnail()}
@@ -41,7 +41,7 @@ class FolioItem extends Component {
 
   internalLink() {
     return (
-      <Link to={`/folio${this.props.folioItem.url}`}>
+      <Link to={this.props.folioItem.frontmatter.url}>
         {this.thumbnail()}
       </Link>
     )
@@ -50,7 +50,7 @@ class FolioItem extends Component {
   render() {
     return (
       <div className="FolioItem">
-        {this.props.folioItem.external ?
+        {this.props.folioItem.frontmatter.external ?
           this.externalLink() :
           this.internalLink()
         }

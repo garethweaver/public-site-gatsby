@@ -6,7 +6,7 @@ class Intro extends Component {
   scrollToFolio(event) {
     event.preventDefault()
     let elem = document.getElementById('portfolio-anchor')
-    elem.scrollIntoView({block: 'start', behavior: 'smooth'})
+    elem.scrollIntoView({ block: 'start', behavior: 'smooth' })
   }
 
   render() {
