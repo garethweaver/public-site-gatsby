@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import { CSSTransition } from 'react-transition-group'
 import { connect } from 'react-redux'
 import SiteHeader from './site-header/site-header'
 import SiteFooter from './site-footer/site-footer'
@@ -27,14 +27,13 @@ class Layout extends Component {
         <SiteHeader />
         {this.props.children}
         <SiteFooter />
-        <ReactCSSTransitionGroup
-          transitionName="modal-animation"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={500}>
-          {this.props.modal &&
+        <CSSTransition
+          in={this.props.modal}
+          unmountOnExit
+          timeout={400}
+          classNames="animation-modal">
             <Modal />
-          }
-        </ReactCSSTransitionGroup>
+        </CSSTransition>
       </>
     )
   }

@@ -15,10 +15,10 @@
     "gatsby-transformer-remark": "^2.3.1",
     "node-sass": "4.11.0",
     "react": "16.8.6",
-    "react-addons-css-transition-group": "15.6.2",
     "react-dom": "16.8.6",
     "react-helmet": "5.2.0",
     "react-redux": "^7.0.2",
+    "react-transition-group": "^4.0.0",
     "redux": "4.0.1"
   },
   "keywords": [
