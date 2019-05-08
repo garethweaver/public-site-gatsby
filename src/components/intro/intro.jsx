@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import introImage from '../../images/img-desk.svg'
 import './intro.sass'
 
 class Intro extends Component {
@@ -31,7 +32,7 @@ class Intro extends Component {
         </div>
         <div className="desk-wrap">
           <img
-            src="/images/img-desk.svg"
+            src={introImage}
             alt="Gareth Weaver sitting at a computer desk" />
           <div className="desk-bg" />
           <div id="portfolio-anchor" />
