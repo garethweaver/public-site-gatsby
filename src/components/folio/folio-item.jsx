@@ -49,7 +49,7 @@ class FolioItem extends Component {
 
   render() {
     return (
-      <div className="FolioItem">
+      <div className={`FolioItem ${this.props.current ? 'FolioItem--current' : ''}`}>
         {this.props.folioItem.frontmatter.external ?
           this.externalLink() :
           this.internalLink()

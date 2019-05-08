@@ -8,5 +8,9 @@
     flex: 0 0 33.3333%
     img
       transition: opacity 0.4s
-    &:hover img
+    &:hover:not(&--current) img
       opacity: 0.85
+
+  &--current img
+    filter: grayscale(90%)
+    opacity: 0.5

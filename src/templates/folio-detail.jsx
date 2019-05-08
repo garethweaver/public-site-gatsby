@@ -18,7 +18,7 @@ const FolioTemplate = ({ data }) => {
         <meta name="description" content={frontmatter.meta.description} />
       </Helmet>
       <FolioDetail data={frontmatter} />
-      <FolioList />
+      <FolioList current={frontmatter.url} />
     </Layout>
   )
 }

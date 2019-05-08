@@ -10,6 +10,7 @@ class FolioList extends Component {
       return (
         <FolioItem
           folioItem={folioItem.node}
+          current={this.props.current === folioItem.node.frontmatter.url}
           key={i} />
       )
     })
