@@ -15,7 +15,7 @@ class Intro extends Component {
       <div id="Intro">
         <div className="flex-wrap">
           <div className="flex-box">
-            <h1>Design &amp;<br />Development</h1>
+            <h1>Code &amp;<br />Development</h1>
             <h2>
               Let’s talk about websites, apps, rugby or just the weather.
               I’m a front-end developer and I live in London, UK.
