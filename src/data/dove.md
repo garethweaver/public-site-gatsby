@@ -1,6 +1,6 @@
 ---
 url: /folio/dove-concept-adverts
-order: 120
+order: 50
 thumb:
 - type: gif
   name: dove-concept-adverts.gif
@@ -70,7 +70,7 @@ images:
     name: dove-concept-adverts-3-sm.webp
     height: 400
     width: 600
-next_page: /embedded-media-player
+next_page: /illustration
 meta:
   title: Gareth Weaver - Dove Concept Advert Repository
   description: I led a project to create working prototype of an online repository

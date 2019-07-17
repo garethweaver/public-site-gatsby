@@ -22,9 +22,9 @@ images:
   - resolution: desktop
     type: webp
     name: headless-ghost-1.webp
-next_page: /cashbackcard
     height: 3438
     width: 1200
+next_page: /dove-concept-adverts
 meta:
   title: Gareth Weaver - Headless Ghost Kickstarter Design
   description: A simple one page promotional website for Headless Ghost Kickstarter.

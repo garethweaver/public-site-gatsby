@@ -1,6 +1,6 @@
 ---
 url: /folio/cashbackcard
-order: 50
+order: -10
 thumb:
 - type: gif
   name: cashback-card.gif
@@ -20,7 +20,7 @@ images:
     name: cashback-card-1.webp
     height: 3473
     width: 900
-next_page: /illustration
+next_page: /hoher-backpacks
 meta:
   title: Gareth Weaver - Cashback Card Website Design
   description: Bespoke website design and layout for Cashbackcard.com assembled

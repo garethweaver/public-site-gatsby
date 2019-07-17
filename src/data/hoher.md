@@ -1,6 +1,6 @@
 ---
 url: /folio/hoher-backpacks
-order: 150
+order: 160
 thumb:
   - type: jpg
     name: hoher.jpg
@@ -11,7 +11,6 @@ external: false
 type: Microsite
 year: 2018
 tools: Photoshop, Middleman, Haml, Sass
-live_site: http://www.gohoher.com/
 repository: https://github.com/garethweaver/hoher
 images:
   -
@@ -35,10 +34,11 @@ images:
       name: hoher-1-sm.webp
       height: 1668
       width: 600
-next_page: /business-three-zero-fuel
+next_page: /in2touch
 meta:
   title: Gareth Weaver - Höher Backpacks
-  description: I designed and built a small static site as a landing page for Höher Backpacks. The site links to their Amazon Marketplace.
+  description: I designed and built a small static site as a landing page for
+    Höher Backpacks. The site links to their Amazon Marketplace.
 ---
 A fun project designing and building a small static site as a landing page for
 Höher Bags. The site was built with Middleman in Haml and Sass in just a couple

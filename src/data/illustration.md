@@ -42,11 +42,11 @@ images:
     name: illustration-3.webp
     height: 700
     width: 900
-next_page: /camden-bar
+next_page: /this-site
 meta:
   title: Gareth Weaver - Illustration &amp; Doodles
-  description: Here you can find some random illustrations, doodles and art designed
-    in Illustrator and Photoshop
+  description: Here you can find some random illustrations, doodles and art
+    designed in Illustrator and Photoshop
 ---
 Here's what happens when I have some time and feel a little creative.
 Things don't always work out as expected but sometimes that's just the fun of

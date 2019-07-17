@@ -1,6 +1,6 @@
 ---
 url: /folio/this-site
-order: 10
+order: 0
 thumb:
 - type: jpg
   name: gareth-weaver.jpg
@@ -33,7 +33,7 @@ images:
     name: gareth-weaver-1-sm.webp
     height: 583
     width: 600
-next_page: /hoher-backpacks
+next_page: /cashbackcard
 meta:
   title: Gareth Weaver - I built this with Gatsby and React
   description: I rebuilt my personal website in React using GatsbyJs and learnt
@@ -43,4 +43,4 @@ I decided to rebuild my personal site in React using GatsbyJs. Originally
 the site was built in Angular and compiled with Middleman but I thought it was
 about time I updated the framework and learnt something new. I also made some
 minor design tweaks, you can find the repo <a href="https://github.com/garethweaver/public-site-react"
-target="_blank" rel="noopener noreferrer">on my github</a>.</p>
+target="_blank" rel="noopener noreferrer">on github</a>.</p>

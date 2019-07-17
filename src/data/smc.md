@@ -1,6 +1,6 @@
 ---
 url: /folio/stella-mccartney-tumblr
-order: 130
+order: 140
 thumb:
 - type: jpg
   name: stella-mccartney.jpg
@@ -53,7 +53,7 @@ images:
     name: stella-mccartney-2-sm.webp
     height: 670
     width: 600
-next_page: /dove-concept-adverts
+next_page: /business-three-zero-fuel
 meta:
   title: Gareth Weaver - Stella McCartney Tumlr
   description: I wrote a small ES6 app to be loaded externally from Tumblr to create
