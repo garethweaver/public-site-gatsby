@@ -23,7 +23,7 @@ images:
     name: camden-bar-1.webp
     height: 3124
     width: 900
-next_page: /this-site
+next_page: /dove-concept-adverts
 meta:
   title: Gareth Weaver - Camden Bar &amp; Kitchen Website
   description: Custom website design and build for Camden Bar &amp; Kitchen built
