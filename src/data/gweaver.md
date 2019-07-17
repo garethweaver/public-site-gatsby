@@ -2,8 +2,10 @@
 url: /folio/this-site
 order: 10
 thumb:
-- type: gif
-  name: gareth-weaver.gif
+- type: jpg
+  name: gareth-weaver.jpg
+- type: webp
+  name: gareth-weaver.webp
 title: This Website
 external: false
 type: Static site
