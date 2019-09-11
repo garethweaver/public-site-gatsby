@@ -1,6 +1,6 @@
 ---
 url: http://codepen.io/garethdweaver/details/rOPpLW/
-order: 90
+order: -20
 thumb:
 - type: jpg
   name: snow-canvas.jpg

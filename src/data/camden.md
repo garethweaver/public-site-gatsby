@@ -1,6 +1,6 @@
 ---
 url: /folio/camden-bar
-order: 20
+order: -40
 thumb:
 - type: jpg
   name: camden-bar.jpg
@@ -23,7 +23,7 @@ images:
     name: camden-bar-1.webp
     height: 3124
     width: 900
-next_page: /dove-concept-adverts
+next_page: /hoher-backpacks
 meta:
   title: Gareth Weaver - Camden Bar &amp; Kitchen Website
   description: Custom website design and build for Camden Bar &amp; Kitchen built

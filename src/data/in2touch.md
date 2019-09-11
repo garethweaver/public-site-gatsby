@@ -74,7 +74,7 @@ images:
     name: in2touch-3-sm.webp
     height: 1067
     width: 600
-next_page: /stella-mccartney-tumblr
+next_page: /gilda
 meta:
   title: Gareth Weaver - In2Touch App
   description: A personal project to show team and league results for the

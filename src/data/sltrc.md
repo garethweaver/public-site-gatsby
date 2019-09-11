@@ -52,7 +52,7 @@ images:
     name: south-london-touch-3-sm.webp
     height: 540
     width: 600
-next_page: /big-sofa
+next_page: /stella-mccartney-tumblr
 meta:
   title: Gareth Weaver - South London Touch Rugby
   description: A personal project to re-design my social touch rugby club's logo
