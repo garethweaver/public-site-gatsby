@@ -35,6 +35,12 @@ class FolioItem extends Component {
         target="_blank"
         rel="noopener noreferrer">
         {this.thumbnail()}
+        <span className="FolioItem__exteral">
+          <span
+            className="fa fa-codepen"
+            aria-hidden="true">
+          </span>
+        </span>
       </a>
     )
   }
