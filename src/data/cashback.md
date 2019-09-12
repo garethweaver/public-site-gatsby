@@ -20,7 +20,7 @@ images:
     name: cashback-card-1.webp
     height: 3473
     width: 900
-next_page: /camden-bar
+next_page: /illustration
 meta:
   title: Gareth Weaver - Cashback Card Website Design
   description: Bespoke website design and layout for Cashbackcard.com assembled

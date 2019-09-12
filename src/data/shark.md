@@ -1,6 +1,6 @@
 ---
 url: https://codepen.io/garethdweaver/pen/LYPdJYY
-order: -30
+order: 40
 thumb:
 - type: jpg
   name: shark.jpg

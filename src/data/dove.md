@@ -70,7 +70,7 @@ images:
     name: dove-concept-adverts-3-sm.webp
     height: 400
     width: 600
-next_page: /illustration
+next_page: /this-site
 meta:
   title: Gareth Weaver - Dove Concept Advert Repository
   description: I led a project to create working prototype of an online repository

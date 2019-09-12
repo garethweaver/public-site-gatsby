@@ -1,6 +1,6 @@
 ---
 url: /folio/illustration
-order: 40
+order: -30
 thumb:
 - type: jpg
   name: illustration.jpg
@@ -42,7 +42,7 @@ images:
     name: illustration-3.webp
     height: 700
     width: 900
-next_page: /this-site
+next_page: /camden-bar
 meta:
   title: Gareth Weaver - Illustration &amp; Doodles
   description: Here you can find some random illustrations, doodles and art
