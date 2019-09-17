@@ -1,22 +1,27 @@
+import IconGithub from 'images/icons/github-alt.inline.svg'
+import IconCodepen from 'images/icons/codepen.inline.svg'
+import IconPDF from 'images/icons/file-pdf-o.inline.svg'
+import IconTwitter from 'images/icons/twitter.inline.svg'
+
 const MENU_DATA = [
   {
     title: 'Github',
-    icon: 'fa-github-alt',
+    icon: IconGithub,
     link: 'https://github.com/garethweaver',
   },
   {
     title: 'Codepen',
-    icon: 'fa-codepen',
+    icon: IconCodepen,
     link: 'https://codepen.io/garethdweaver',
   },
   {
     title: 'CV.pdf',
-    icon: 'fa-file-pdf-o',
+    icon: IconPDF,
     link: 'https://www.garethweaver.com/GarethWeaverCV.pdf',
   },
   {
     title: 'Twitter',
-    icon: 'fa-twitter',
+    icon: IconTwitter,
   },
 ]
 

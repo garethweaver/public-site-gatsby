@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import introImage from '../../images/img-desk.svg'
+import IntroImage from 'images/img-desk.inline.svg'
+import iconDown from 'images/icons/level-down.svg'
 import './intro.sass'
 
 class Intro extends Component {
@@ -26,14 +27,15 @@ class Intro extends Component {
               className="scroll"
               aria-label="Scroll page to portolio section">
               View Portfolio
-              <span className="fa fa-level-down" />
+              <img
+                className="icon-down"
+                src={iconDown}
+                alt="Icon scroll down" />
             </a>
           </div>
         </div>
         <div className="desk-wrap">
-          <img
-            src={introImage}
-            alt="Gareth Weaver sitting at a computer desk" />
+          <IntroImage className="desk" />
           <div className="desk-bg" />
           <div id="portfolio-anchor" />
         </div>

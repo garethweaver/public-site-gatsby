@@ -1,67 +1,53 @@
 @import '../../style/modules/base'
 
-
 .SiteHeader
+  $this: &
+
   padding: 15px 0 0
 
-  .MenuItem
-    color: $gray-600
-    transition: color 0.3s
-    display: block
-    &:hover
-      color: $gray-600
+  +media-breakpoint-up(md)
+    +fixed-top
+    z-index: 5
+    padding: 0
 
-  .menu
+  ul
+    +list-unstyled
+
+  &__flex
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    justify-content: space-between
+
+  &__menu
     padding: 15px 0 0
-    ul
-      +list-unstyled
-    .MenuItem
-      display: block
-      padding: 10px 0
-    .fa
-      width: 20px
-      margin-right: 10px
+    flex: 1 0 100%
+    +media-breakpoint-up(md)
+      flex: 0 0 auto
 
-  .logo
-    float: left
-    height: 40px
-    line-height: 40px
-    .fa
-      margin-left: 8px
-
-  .mobile-menu-toggle
+  .SiteHeader__toggle
     +circle-button
-    float: right
+    outline: none
+
+    img
+      width: 45%
+
 
   .mobile-menu-closed
     display: none
 
   +media-breakpoint-up(md)
-    +fixed-top
-    z-index: 5
-    .MenuItem
-      color: white
-      &:hover
-        color: white
 
-    .page-folio & .MenuItem
-      color: $gray-800
-
-    .menu
-      .MenuItem
-        padding: 0 2px
+    &__menu
+      // .MenuItem
+      //   padding: 0 2px
 
       li:last-child .MenuItem
         padding-right: 0
 
-    .menu
+    &__menu
       +list-inline
-      float: right
       &.mobile-menu-closed
-        display: block
-      .fa
-        +circle-button
-        margin-right: 0
         display: block
       .text
         position: absolute
@@ -72,10 +58,12 @@
         visibility: hidden
         opacity: 0
         transition: all 0.2s
+
       .MenuItem:hover .text
         visibility: visible
         opacity: 1
         right: 110%
+
       ul
         position: relative
         height: 40px
@@ -86,17 +74,76 @@
       position: relative
       z-index: 3
 
-    .background
+    &__bg
       +fixed-top
       height: 0
       background: white
       transition: height 0.3s
       z-index: 2
 
+
+.MenuItem
+  width: 100%
+  display: flex
+  align-items: center
+  padding: 10px 0
+
+  .icon
+    +square(20px)
+    margin-right: 10px
+
+    svg
+      +square(100%)
+      display: block
+
+  +media-breakpoint-up(md)
+    width: auto
+    padding: 0 2px
+
+    .icon
+      +circle-button
+      margin-right: 0
+      display: block
+
+
+.SiteHeader
+  $this: &
+
+  color: $gray-600
+  transition: color 0.2s
+
+  a,
+  button
+    color: inherit
+
+    &:hover
+      color: inherit
+
+  svg path
+    transition: fill 0.2s
+    fill: $gray-600
+
+
+  +media-breakpoint-up(md)
+    color: white
+
+    svg path
+      fill: white
+
     &.is-scrolled
-      .background
+      #{$this}__bg
         height: 70px
+
       .wrap
         padding: 0 40px
-      .MenuItem
-        color: $gray-600
+
+      color: $gray-600
+
+      svg path
+        fill: $gray-600
+
+    @at-root .page-folio &:not(.is-scrolled)
+      color: $gray-800
+
+      svg path
+        fill: $gray-800

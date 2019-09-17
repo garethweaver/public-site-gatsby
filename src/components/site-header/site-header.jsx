@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
 import { connect } from 'react-redux'
 import { SHOW_MOB_MENU, HIDE_MOB_MENU } from '../../store/actions'
 import MenuItem from '../menu-item/menu-item'
 import MENU_DATA from '../../data/menu'
+import Logo from './logo'
+import iconBars from 'images/icons/bars.svg'
+import iconTimes from 'images/icons/times.svg'
 import './site-header.sass'
 
 class SiteHeader extends Component {
@@ -50,32 +52,23 @@ class SiteHeader extends Component {
       this.props.showMobileMenu()
   }
 
-  mobileMenuClasses() {
-    return `
-      mobile-menu-toggle MenuItem d-md-none fa
-      ${this.props.mobileMenu ?
-        'fa-times' :
-        'fa-bars'}
-    `
-  }
-
   render() {
     return (
       <header className={`SiteHeader ${this.state.activeClass}`}>
-        <div className="background" />
+        <div className="SiteHeader__bg" />
         <div className="wrap">
-          <Link to="/" className="logo MenuItem">
-            garethweaver.com
-            <span className="fa fa-code" />
-          </Link>
-          <button
-            onClick={this.toggleMobileMenu}
-            className={this.mobileMenuClasses()}
-            aria-label="Toggle mobile menu open closed" />
-          <div className="clearfix d-md-none" />
-          <nav className={`menu ${this.props.mobileMenu ? 'mobile-menu-open' : 'mobile-menu-closed'}`}>
-            <ul>{this.getMenuItems()}</ul>
-          </nav>
+          <div className="SiteHeader__flex">
+            <Logo />
+            <button
+              onClick={this.toggleMobileMenu}
+              className="SiteHeader__toggle d-md-none"
+              aria-label="Toggle mobile menu open closed">
+              <img src={this.props.mobileMenu ? iconTimes : iconBars} alt="icon" />
+            </button>
+            <nav className={`SiteHeader__menu ${this.props.mobileMenu ? 'mobile-menu-open' : 'mobile-menu-closed'}`}>
+              <ul>{this.getMenuItems()}</ul>
+            </nav>
+          </div>
         </div>
       </header>
     )

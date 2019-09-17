@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, withPrefix } from 'gatsby'
+import iconCodepen from 'images/icons/codepen.svg'
 import './folio-item.sass'
 
 class FolioItem extends Component {
@@ -35,11 +36,10 @@ class FolioItem extends Component {
         target="_blank"
         rel="noopener noreferrer">
         {this.thumbnail()}
-        <span className="FolioItem__exteral">
-          <span
-            className="fa fa-codepen"
-            aria-hidden="true">
-          </span>
+        <span className="icon-exteral">
+          <img
+            src={iconCodepen}
+            alt="Codepen icon" />
         </span>
       </a>
     )
