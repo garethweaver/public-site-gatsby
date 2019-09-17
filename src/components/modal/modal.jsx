@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Tweet from '../tweet/tweet'
 import { HIDE_MODAL } from '../../store/actions'
+import iconClose from 'images/icons/times-alt.svg'
+import iconRefresh from 'images/icons/refresh.svg'
 import './modal.sass'
 
 class Modal extends Component {
@@ -41,7 +43,9 @@ class Modal extends Component {
   getLoader() {
     return (
       <div className="loading-spinner-wrapper">
-        <span className="loading-spinner fa fa-refresh fa-spin" />
+        <img
+          src={iconRefresh}
+          alt="Icon loading" />
       </div>
     )
   }
@@ -72,7 +76,9 @@ class Modal extends Component {
             onClick={this.closeModal}
             aria-label="Close tweets modal"
             className="close-modal">
-            <span className="fa fa-times" />
+            <img
+              src={iconClose}
+              alt="Icon close tweets modal" />
           </button>
           <div className="modal-inner">
             <header>

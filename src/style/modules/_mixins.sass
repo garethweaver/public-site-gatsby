@@ -14,6 +14,14 @@
   li
     display: inline-block
 
+=square($n)
+  height: $n
+  width: $n
+
+=circle($n)
+  +square($n)
+  border-radius: 50%
+
 =circle-button
   background: rgba(black,0.05)
   width: 40px
@@ -23,8 +31,10 @@
   line-height: 40px
   display: inline-block
   position: relative
-  .fa
+  img,
+  svg
     +center
+    width: 55%
 
 =center
   position: absolute

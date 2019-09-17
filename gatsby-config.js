@@ -23,6 +23,20 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-resolve-src`,
+      options: {
+        addSassLoader: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-svg`,
+      options: {
+        rule: {
+          include: /\.inline\.svg$/
+        }
+      }
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-22525855-2',

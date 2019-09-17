@@ -5,10 +5,13 @@ import { SHOW_MODAL_HIDE_MOB_MENU } from '../../store/actions'
 class MenuItem extends Component {
 
   linkContent() {
+    const Icon = this.props.data.icon
     return (
       <>
         {this.props.showIcon &&
-          <span className={`fa ${this.props.data.icon}`}></span>
+          <span className="icon">
+            <Icon />
+          </span>
         }
         <span className="text">{this.props.data.title}</span>
       </>
