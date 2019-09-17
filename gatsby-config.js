@@ -45,5 +45,20 @@ module.exports = {
         siteSpeedSampleRate: 10,
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Open Sans`,
+            variants: [`800`]
+          },
+          {
+            family: `Playfair Display`,
+            variants: [`400`]
+          },
+        ],
+      },
+    },
   ],
 }
