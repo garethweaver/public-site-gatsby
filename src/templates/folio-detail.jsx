@@ -16,6 +16,9 @@ const FolioTemplate = ({ data }) => {
         <body class="page-folio" />
         <title>{frontmatter.meta.title}</title>
         <meta name="description" content={frontmatter.meta.description} />
+        <meta property="og:title" content={frontmatter.meta.title} />
+        <meta property="og:description" content={frontmatter.meta.description} />
+        <meta property="og:url" content={`https://www.garethweaver.com/${frontmatter.url}`} />
       </Helmet>
       <FolioDetail data={frontmatter} />
       <FolioList />

@@ -18,8 +18,8 @@ class Layout extends Component {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="Gareth Weaver - Front-end Web Designer &amp;amp; Developer" />
-          <meta property="og:url" content="http://www.garethweaver.com/" />
-          <meta property="og:image" content="http://www.garethweaver.com/images/img-og.jpg" />
+          <meta property="og:url" content="https://www.garethweaver.com" />
+          <meta property="og:image" content="https://www.garethweaver.com/images/img-og.jpg" />
           <meta property="og:description" content="I&#39;m a front-end web designer and developer from the UK currently based in London. I&#39;m always happy to have a chat about websites, hosting, technology or rugby. Why not send me a message?" />
         </Helmet>
         <SiteHeader />
