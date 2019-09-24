@@ -33,7 +33,7 @@ images:
     name: gareth-weaver-1-sm.webp
     height: 583
     width: 600
-next_page: /cashbackcard
+next_page: /embedded-media-player
 meta:
   title: Gareth Weaver - I built this with Gatsby and React
   description: I rebuilt my personal website in React using GatsbyJs and learnt

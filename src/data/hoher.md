@@ -13,27 +13,26 @@ year: 2018
 tools: Photoshop, Middleman, Haml, Sass
 repository: https://github.com/garethweaver/hoher
 images:
-  -
-    - resolution: desktop
-      type: jpg
-      name: hoher-1-lg.jpg
-      height: 3335
-      width: 1200
-    - resolution: desktop
-      type: webp
-      name: hoher-1-lg.webp
-      height: 3335
-      width: 1200
-    - resolution: mobile
-      type: jpg
-      name: hoher-1-sm.jpg
-      height: 1668
-      width: 600
-    - resolution: mobile
-      type: webp
-      name: hoher-1-sm.webp
-      height: 1668
-      width: 600
+- - resolution: desktop
+    type: jpg
+    name: hoher-1-lg.jpg
+    height: 3335
+    width: 1200
+  - resolution: desktop
+    type: webp
+    name: hoher-1-lg.webp
+    height: 3335
+    width: 1200
+  - resolution: mobile
+    type: jpg
+    name: hoher-1-sm.jpg
+    height: 1668
+    width: 600
+  - resolution: mobile
+    type: webp
+    name: hoher-1-sm.webp
+    height: 1668
+    width: 600
 next_page: /in2touch
 meta:
   title: Gareth Weaver - Höher Backpacks

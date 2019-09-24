@@ -1,6 +1,6 @@
 ---
 url: /folio/embedded-media-player
-order: 110
+order: -10
 thumb:
 - type: gif
   name: media-player.gif
@@ -31,7 +31,7 @@ images:
     name: media-player-2-lg.webp
     height: 900
     width: 900
-next_page: /south-london-touch
+next_page: /illustration
 meta:
   title: Gareth Weaver - Embedded Media Player
   description: I wrote an embedded HTML5 media player in CoffeeScript for Big Sofa
