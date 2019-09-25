@@ -10,7 +10,7 @@ class FolioDetail extends Component {
       return (
         <div
           key={i}
-          className="image-wrapper folio-block">
+          className="FolioDetail__image-wrap FolioDetail__block">
           <FolioImage
             imageData={imageObj}
             title={this.props.data.title + ' ' + (i + 1)} />
@@ -21,7 +21,7 @@ class FolioDetail extends Component {
 
   getItemMeta() {
     return (
-      <ul className="folio-meta">
+      <ul className="FolioDetail__meta">
         <li dangerouslySetInnerHTML={{__html: this.props.data.type}} />
         <li>{this.props.data.tools}</li>
         <li>{this.props.data.year}</li>
@@ -33,10 +33,12 @@ class FolioDetail extends Component {
     const item = this.props.data
 
     return (
-      <div className="FolioDetail wrap">
-        <div className="inner">
-          <div className="folio-text folio-block">
-            <h1 dangerouslySetInnerHTML={{__html: item.title}} />
+      <div className="FolioDetail u-wrap">
+        <div className="u-inner">
+          <div className="FolioDetail__text FolioDetail__block">
+            <h1
+              className="FolioDetail__title"
+              dangerouslySetInnerHTML={{__html: item.title}} />
             {this.getItemMeta(item)}
             <div dangerouslySetInnerHTML={{__html: item.html}} />
           </div>

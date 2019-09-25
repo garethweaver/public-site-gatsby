@@ -16,14 +16,14 @@ class FolioItem extends Component {
           type="image/webp"
           srcSet={withPrefix(`/images/thumb/${this.getImageType('webp').name}`)} />
         <img
-          className="respond"
+          className="u-respond"
           src={withPrefix(`/images/thumb/${this.getImageType('jpg').name}`)}
           alt={this.props.folioItem.frontmatter.title} />
       </picture>
       :
       <picture>
         <img
-          className="respond"
+          className="u-respond"
           src={withPrefix(`/images/thumb/${this.getImageType('gif').name}`)}
           alt={this.props.folioItem.frontmatter.title} />
       </picture>
@@ -36,7 +36,7 @@ class FolioItem extends Component {
         target="_blank"
         rel="noopener noreferrer">
         {this.thumbnail()}
-        <span className="icon-exteral">
+        <span className="FolioItem__icon">
           <img
             src={iconCodepen}
             alt="Codepen icon" />

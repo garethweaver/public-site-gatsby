@@ -9,11 +9,11 @@ class MenuItem extends Component {
     return (
       <>
         {this.props.showIcon &&
-          <span className="icon">
+          <span className="MenuItem__icon">
             <Icon />
           </span>
         }
-        <span className="text">{this.props.data.title}</span>
+        <span className="MenuItem__text">{this.props.data.title}</span>
       </>
     )
   }

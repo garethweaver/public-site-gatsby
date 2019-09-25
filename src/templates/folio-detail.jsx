@@ -13,7 +13,7 @@ const FolioTemplate = ({ data }) => {
   return (
     <Layout>
       <Helmet>
-        <body class="page-folio" />
+        <body class="p-folio" />
         <title>{frontmatter.meta.title}</title>
         <meta name="description" content={frontmatter.meta.description} />
         <meta property="og:title" content={frontmatter.meta.title} />

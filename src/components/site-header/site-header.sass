@@ -1,8 +1,6 @@
 @import '../../style/modules/base'
 
 .SiteHeader
-  $this: &
-
   padding: 15px 0 0
 
   +media-breakpoint-up(md)
@@ -10,43 +8,39 @@
     z-index: 5
     padding: 0
 
-  ul
-    +list-unstyled
-
   &__flex
     display: flex
     align-items: center
     flex-wrap: wrap
     justify-content: space-between
 
-  &__menu
+  &__nav
     padding: 15px 0 0
     flex: 1 0 100%
     +media-breakpoint-up(md)
       flex: 0 0 auto
 
-  .SiteHeader__toggle
+    &--closed
+      display: none
+
+  &__toggle
     +circle-button
     outline: none
 
-    img
-      width: 45%
-
-
-  .mobile-menu-closed
-    display: none
+  &__toggle-icon
+    width: 45%
 
   +media-breakpoint-up(md)
+    &__nav
+      +list-inline
 
-    &__menu
       li:last-child .MenuItem
         padding-right: 0
 
-    &__menu
-      +list-inline
-      &.mobile-menu-closed
+      &--closed
         display: block
-      .text
+
+      .MenuItem__text
         position: absolute
         top: 50%
         right: 120%
@@ -56,7 +50,7 @@
         opacity: 0
         transition: all 0.2s
 
-      .MenuItem:hover .text
+      .MenuItem:hover .MenuItem__text
         visibility: visible
         opacity: 1
         right: 110%
@@ -65,7 +59,7 @@
         position: relative
         height: 40px
 
-    .wrap
+    .u-wrap
       padding: 50px 70px 0
       transition: padding 0.3s
       position: relative
@@ -78,34 +72,8 @@
       transition: height 0.3s
       z-index: 2
 
-
-.MenuItem
-  width: 100%
-  display: flex
-  align-items: center
-  padding: 10px 0
-
-  .icon
-    +square(20px)
-    margin-right: 10px
-
-    svg
-      +square(100%)
-      display: block
-
-  +media-breakpoint-up(md)
-    width: auto
-    padding: 0 2px
-
-    .icon
-      +circle-button
-      margin-right: 0
-      display: block
-
-
 .SiteHeader
   $this: &
-
   color: $gray-600
   transition: color 0.2s
 
@@ -127,11 +95,11 @@
     svg path
       fill: white
 
-    &.is-scrolled
+    &.SiteHeader--is-scrolled
       #{$this}__bg
         height: 70px
 
-      .wrap
+      .u-wrap
         padding: 0 40px
 
       color: $gray-600
@@ -139,8 +107,31 @@
       svg path
         fill: $gray-600
 
-    @at-root .page-folio &:not(.is-scrolled)
+    @at-root .p-folio &:not(.SiteHeader--is-scrolled)
       color: $gray-800
 
       svg path
         fill: $gray-800
+
+.MenuItem
+  width: 100%
+  display: flex
+  align-items: center
+  padding: 10px 0
+
+  &__icon
+    +square(20px)
+    margin-right: 10px
+
+    svg
+      +square(100%)
+      display: block
+
+  +media-breakpoint-up(md)
+    width: auto
+    padding: 0 2px
+
+    &__icon
+      +circle-button
+      margin-right: 0
+      display: block

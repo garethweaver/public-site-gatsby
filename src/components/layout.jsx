@@ -29,7 +29,7 @@ class Layout extends Component {
           in={this.props.modal}
           unmountOnExit
           timeout={400}
-          classNames="animation-modal">
+          classNames="a-modal">
             <Modal />
         </CSSTransition>
       </>

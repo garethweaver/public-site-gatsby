@@ -22,12 +22,12 @@ class Modal extends Component {
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeydown)
-    document.body.classList.add('no-scroll')
+    document.body.classList.add('u-no-scroll')
     this.fetchTweets()
   }
 
   componentWillUnmount() {
-    document.body.classList.remove('no-scroll')
+    document.body.classList.remove('u-no-scroll')
     document.removeEventListener('keydown', this.handleKeydown)
   }
 
@@ -42,7 +42,7 @@ class Modal extends Component {
 
   getLoader() {
     return (
-      <div className="loading-spinner-wrapper">
+      <div className="Modal__spinner">
         <img
           src={iconRefresh}
           alt="Icon loading" />
@@ -52,7 +52,7 @@ class Modal extends Component {
 
   getTweets() {
     return this.state.tweets.length ? (
-      <ul className="tweet-list">
+      <ul className="Modal__tweet-list">
         {this.state.tweets.map((tweet, i) => {
           return (
             <Tweet key={i} tweet={tweet} />
@@ -71,17 +71,17 @@ class Modal extends Component {
   render() {
     return (
       <aside className="Modal">
-        <div className="modal-wrapper">
+        <div className="Modal__wrapper">
           <button
             onClick={this.closeModal}
             aria-label="Close tweets modal"
-            className="close-modal">
+            className="Modal__close">
             <img
               src={iconClose}
               alt="Icon close tweets modal" />
           </button>
-          <div className="modal-inner">
-            <header>
+          <div className="Modal__inner a-modal-inner">
+            <header className="Modal__header">
               <h1>Follow Me</h1>
               <a href="https://twitter.com/garethdweaver">@garethdweaver</a>
             </header>

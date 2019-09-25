@@ -6,10 +6,11 @@
   padding: 15px
   background: white
   overflow: auto
+
   +media-breakpoint-up(md)
     padding: 45px 40px
 
-  .modal-wrapper
+  &__wrapper
     position: relative
     max-width: $max-width - 80px
     margin: 0 auto
@@ -19,10 +20,11 @@
     min-height: 100%
     display: flex
     align-items: center
+
     +media-breakpoint-up(md)
       padding: 40px 30px 20px
 
-  .close-modal
+  &__close
     +circle-button
     outline: none
     position: absolute
@@ -31,25 +33,26 @@
     color: white
     background: rgba(white, 0.2)
 
-  header
+  &__header
     text-align: center
     margin-bottom: 2em
 
   h1
     margin-bottom: 0
 
-  .modal-inner
+  &__inner
     max-width: 500px
     margin: 0 auto
 
-  .tweet-list
+  &__tweet-list
     +list-unstyled
     font-size: 18px
+
     li
       display: flex
       margin: 20px 0
 
-  .loading-spinner-wrapper
+  &__spinner
     +square(40px)
     margin: 0 auto
 

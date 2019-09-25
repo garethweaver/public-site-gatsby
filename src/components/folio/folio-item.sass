@@ -3,28 +3,32 @@
 .FolioItem
   flex: 0 0 100%
   position: relative
+
   +media-breakpoint-up(sm)
     flex: 0 0 50%
+
   +media-breakpoint-up(md)
     flex: 0 0 33.3333%
+
     img
       transition: opacity 0.4s
+
     &:hover img
       opacity: 0.85
 
-  .icon-exteral
+    &:hover &__icon
+      opacity: 1
+      transform: scale(1)
+
+  &__icon
     +circle-button
     position: absolute
     bottom: 20px
     left: 20px
     background: white
     color: $gray-600
+
     +media-breakpoint-up(md)
       transition: all 0.4s
       transform: scale(0.9)
       opacity: 0
-
-  +media-breakpoint-up(md)
-    &:hover .icon-exteral
-      opacity: 1
-      transform: scale(1)

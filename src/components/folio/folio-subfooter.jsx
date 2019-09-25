@@ -10,13 +10,13 @@ class FolioSubfooter extends Component {
   render() {
     return (
       <footer className="FolioSubfooter">
-        <nav>
+        <nav className="FolioSubfooter__nav">
           {this.props.item.live_site &&
             <a
               href={this.props.item.live_site}
               target="_blank"
               rel="noopener noreferrer">
-                <IconGlobe className="icon" />
+                <IconGlobe className="FolioSubfooter__icon" />
                 Visit
             </a>
           }
@@ -25,13 +25,13 @@ class FolioSubfooter extends Component {
               href={this.props.item.repository}
               target="_blank"
               rel="noopener noreferrer">
-                <IconGithub className="icon" />
+                <IconGithub className="FolioSubfooter__icon" />
                 Repo
             </a>
           }
           {this.props.item.next_page &&
             <Link to={`/folio${this.props.item.next_page}`}>
-                <IconArrow className="icon" />
+                <IconArrow className="FolioSubfooter__icon" />
                 Next
             </Link>
           }

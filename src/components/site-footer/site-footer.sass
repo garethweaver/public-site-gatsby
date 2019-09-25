@@ -3,23 +3,26 @@
 .SiteFooter
   color: $gray-600
 
-  &.wrap
+  &.u-wrap
     padding-top: 30px
     padding-bottom: 60px
+
     +media-breakpoint-up(md)
       padding-top: 60px
       padding-bottom: 100px
 
-  ul
+  &__list
     text-align: center
+
     +media-breakpoint-up(md)
       +list-inline
       font-size: 18px
 
   a,
-  .copyright,
-  button
+  button,
+  &__copyright
     display: inline-block
     padding: 10px 25px
+
     +media-breakpoint-up(lg)
       padding: 10px 40px

@@ -1,6 +1,6 @@
 @import '../../style/modules/base'
 
-#Intro
+.Intro
   color: white
   box-sizing: border-box
   position: relative
@@ -8,8 +8,12 @@
   text-align: center
   margin: 15px 15px 0
 
-  .flex-wrap
+  &__flex
     padding: 60px 20px
+
+  &__flex-center
+    max-width: 300px
+    margin: 0 auto
 
   h1
     line-height: 1.2
@@ -21,22 +25,21 @@
     margin: 20px 0 20px
     font-weight: normal
 
-  .scroll
+  &__scroll-anchor
     color: white
     display: inline-block
     padding: 0 8px 5px
     border-bottom: 1px solid white
     transition: opacity 0.2s
+
     &:hover
+      color: inherit
       opacity: 0.8
 
-    .icon-down
-      +square(16px)
-      margin-left: 8px
+  &__scroll-icon
+    +square(16px)
+    margin-left: 8px
 
-  .flex-box
-    max-width: 300px
-    margin: 0 auto
 
   +media-breakpoint-up(md)
     border: 40px solid white
@@ -46,36 +49,42 @@
     margin: 0 auto
     min-height: 800px
     margin-bottom: 40px
-    .flex-wrap
+
+    &__flex
       height: 100%
       display: flex
       align-items: center
       justify-content: center
       padding-bottom: 327px
-    .flex-box
+
+    &__flex-center
       max-width: $max-width-centered-content
-    .scroll
+
+    &__scroll-anchor
       font-size: 0.7em
 
-.desk-wrap
+.DeskWrap
   background: white
   padding-bottom: 40px
   position: relative
+
   +media-breakpoint-up(md)
     margin-top: -327px
 
-  .desk
+  &__desk
     max-width: 200px
     margin: 0 auto
     display: block
     position: relative
     z-index: 2
+
     +media-breakpoint-up(md)
       max-width: 350px
 
-  .desk-bg
+  &__bg
     +absolute-top
     background: $primary
     height: 116px
+
     +media-breakpoint-up(md)
       height: 201px

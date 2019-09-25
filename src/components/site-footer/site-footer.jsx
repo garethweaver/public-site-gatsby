@@ -17,12 +17,14 @@ class SiteFooter extends Component {
 
   render() {
     return (
-      <footer className="SiteFooter wrap">
+      <footer className="SiteFooter u-wrap">
         <nav>
-          <ul className="list-unstyled">
+          <ul className="SiteFooter__list u-list-unstyled">
             {this.getMenuItems()}
             <li>
-              <span className="copyright">&copy; G.Weaver {new Date().getFullYear()}</span>
+              <span className="SiteFooter__copyright">
+                &copy; G.Weaver {new Date().getFullYear()}
+              </span>
             </li>
           </ul>
         </nav>

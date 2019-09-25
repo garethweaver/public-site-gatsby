@@ -1,46 +1,54 @@
 @import '../../style/modules/base'
 
 .FolioDetail
-  h1
-    +media-breakpoint-down(xs)
-      font-size: 1.5em
-
-  .folio-block
+  &__block
     max-width: 900px
     margin: 0 auto
 
-  .folio-text
+  &__title
+    +media-breakpoint-down(xs)
+      font-size: 1.5em
+
+  &__text
     margin-bottom: 40px
+
     +media-breakpoint-up(lg)
       margin-bottom: 80px
       margin-top: 20px
+
     +media-breakpoint-up(xl)
       margin-bottom: 40px
       margin-top: 60px
 
-  .folio-meta
+  &__meta
     padding: 0 0 0 1em
     margin: 0.8em 0 1.5em
     color: #999999
     font-style: italic
+
     +media-breakpoint-up(md)
       +list-unstyled
       margin: 0.5em 0 1.5em
+
     li
       &:first-child
         padding-left: 0
+
       &:last-child
         border-right: none
+
       +media-breakpoint-up(md)
         display: inline-block
         border-right: 1px solid $gray-500
         padding: 0 20px
 
-  .image-wrapper
+  &__image-wrap
     +margin-top-bot(20px)
     box-shadow: 0 0 10px rgba(black, 0.1)
+
     +media-breakpoint-up(lg)
       box-shadow: 0 0 20px rgba(black, 0.07)
       +margin-top-bot(40px)
+
     +media-breakpoint-up(xl)
       +margin-top-bot(80px)

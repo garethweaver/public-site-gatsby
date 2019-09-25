@@ -80,10 +80,10 @@ class FolioImage extends Component {
           in={this.state.imageLoaded}
           unmountOnExit
           timeout={300}
-          classNames="animation-image">
+          classNames="a-image">
           <img
             src={withPrefix(`/images/folio/${image.name}`)}
-            className="respond"
+            className="FolioImage__image"
             alt={this.props.title} />
         </CSSTransition>
       </div>

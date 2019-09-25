@@ -17,7 +17,7 @@ class FolioList extends Component {
 
   render() {
     return (
-      <div className="wrap">
+      <div className="u-wrap">
         <div className="FolioList">
           <StaticQuery
             query={graphql`

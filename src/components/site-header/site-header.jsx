@@ -13,7 +13,7 @@ class SiteHeader extends Component {
   constructor(props){
     super(props)
     this.state = {
-      activeClass: 'is-scrolled-top',
+      activeClass: 'SiteHeader--is-scrolled-top',
     }
   }
 
@@ -28,8 +28,8 @@ class SiteHeader extends Component {
   handleScroll = (event) => {
     let activeClass =
       window.pageYOffset > 0 ?
-        'is-scrolled' :
-        'is-scrolled-top'
+        'SiteHeader--is-scrolled' :
+        'SiteHeader--is-scrolled-top'
     if (this.state.activeClass !== activeClass) {
       this.setState({ activeClass })
     }
@@ -56,17 +56,20 @@ class SiteHeader extends Component {
     return (
       <header className={`SiteHeader ${this.state.activeClass}`}>
         <div className="SiteHeader__bg" />
-        <div className="wrap">
+        <div className="u-wrap">
           <div className="SiteHeader__flex">
             <Logo />
             <button
               onClick={this.toggleMobileMenu}
               className="SiteHeader__toggle d-md-none"
               aria-label="Toggle mobile menu open closed">
-              <img src={this.props.mobileMenu ? iconTimes : iconBars} alt="icon" />
+              <img
+                className="SiteHeader__toggle-icon"
+                src={this.props.mobileMenu ? iconTimes : iconBars}
+                alt="icon" />
             </button>
-            <nav className={`SiteHeader__menu ${this.props.mobileMenu ? 'mobile-menu-open' : 'mobile-menu-closed'}`}>
-              <ul>{this.getMenuItems()}</ul>
+            <nav className={`SiteHeader__nav ${this.props.mobileMenu ? 'SiteHeader__nav--open' : 'SiteHeader__nav--closed'}`}>
+              <ul className="u-list-unstyled">{this.getMenuItems()}</ul>
             </nav>
           </div>
         </div>

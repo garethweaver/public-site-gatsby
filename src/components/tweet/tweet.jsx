@@ -35,7 +35,9 @@ class Tweet extends Component {
 
   doReplacements(rep, tweet) {
     return tweet.replace(rep.regex, (string) => {
-      let url = rep.encode ? rep.linkTo + string.replace(rep.encode[0], rep.encode[1]) : string
+      let url = rep.encode
+        ? rep.linkTo + string.replace(rep.encode[0], rep.encode[1])
+        : string
       return `<a href="${url}" target="_blank" rel="noopener noreferrer">${string}</a>`
     })
   }
@@ -43,12 +45,15 @@ class Tweet extends Component {
   render() {
     return (
       <li className="Tweet">
-        <div className="img-wrap">
+        <div className="Tweet__image-wrap">
           <img
+            className="Tweet__image"
             src={this.props.tweet.user.profile_image_url_https}
             alt={this.props.tweet.user.screen_name} />
         </div>
-        <p dangerouslySetInnerHTML={{__html: this.parseTweet(this.props.tweet.text)}} />
+        <p
+          className="Tweet__text"
+          dangerouslySetInnerHTML={{__html: this.parseTweet(this.props.tweet.text)}} />
       </li>
     )
   }
