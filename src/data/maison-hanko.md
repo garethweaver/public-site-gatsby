@@ -16,42 +16,42 @@ images:
 - - resolution: mobile
     type: jpg
     name: maison-hanko-1-sm.jpg
-    height: 2081
+    height: 2298
     width: 600
   - resolution: mobile
     type: webp
     name: maison-hanko-1-sm.webp
-    height: 2081
+    height: 2298
     width: 600
   - resolution: desktop
     type: jpg
     name: maison-hanko-1-lg.jpg
-    height: 4163
+    height: 4596
     width: 1200
   - resolution: desktop
     type: webp
     name: maison-hanko-1-lg.webp
-    height: 4163
+    height: 4596
     width: 1200
 - - resolution: mobile
     type: jpg
     name: maison-hanko-2-sm.jpg
-    height: 1599
+    height: 1400
     width: 600
   - resolution: mobile
     type: webp
     name: maison-hanko-2-sm.webp
-    height: 1599
+    height: 1400
     width: 600
   - resolution: desktop
     type: jpg
     name: maison-hanko-2-lg.jpg
-    height: 3199
+    height: 2800
     width: 1200
   - resolution: desktop
     type: webp
     name: maison-hanko-2-lg.webp
-    height: 3199
+    height: 2800
     width: 1200
 next_page: /south-london-touch
 meta:

@@ -16,22 +16,22 @@ images:
 - - resolution: desktop
     type: jpg
     name: gilda-1-lg.jpg
-    height: 8526
+    height: 7092
     width: 1200
   - resolution: desktop
     type: webp
     name: gilda-1-lg.webp
-    height: 8526
+    height: 7092
     width: 1200
   - resolution: mobile
     type: jpg
     name: gilda-1-sm.jpg
-    height: 4263
+    height: 3546
     width: 600
   - resolution: mobile
     type: webp
     name: gilda-1-sm.webp
-    height: 4263
+    height: 3546
     width: 600
 next_page: /business-three-zero-fuel
 meta:
