@@ -23,6 +23,16 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-transformer-remark',
     {
+      resolve: `gatsby-alias-imports`,
+      options: {
+        aliases: {
+          components: `src/components`,
+          store: `src/store`,
+          data: `src/data`,
+        },
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: './src/data/',

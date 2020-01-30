@@ -1,10 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import Layout from '../components/layout'
-import Seo from '../components/seo/seo'
-import FolioDetail from '../components/folio/folio-detail'
-import FolioList from '../components/folio/folio-list'
+import Layout from 'components/layout'
+import Seo from 'components/seo/seo'
+import FolioDetail from 'components/folio/folio-detail'
+import FolioList from 'components/folio/folio-list'
 
 const FolioTemplate = ({ data }) => {
   const { markdownRemark } = data

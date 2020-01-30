@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { SHOW_MODAL_HIDE_MOB_MENU } from '../../store/actions'
+import { SHOW_MODAL_HIDE_MOB_MENU } from 'store/actions'
 
 class MenuItem extends Component {
 

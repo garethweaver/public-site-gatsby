@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
-import MenuItem from '../menu-item/menu-item'
-import MENU_DATA from '../../data/menu'
+import React, { Component } from 'react'
+import MenuItem from 'components/menu-item/menu-item'
+import MENU_DATA from 'data/menu'
 import './site-footer.sass'
 
 class SiteFooter extends Component {
