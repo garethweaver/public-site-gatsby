@@ -1,6 +1,6 @@
 ---
 url: /folio/maison-hanko
-order: 110
+order: 160
 thumb:
 - type: jpg
   name: maison-hanko.jpg
@@ -53,7 +53,7 @@ images:
     name: maison-hanko-2-lg.webp
     height: 2800
     width: 1200
-next_page: /south-london-touch
+next_page: /in2touch
 meta:
   title: Gareth Weaver - Maison Hanko
   description: A static site built with GatsbyJS to showcase top Japanese
