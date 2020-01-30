@@ -1,14 +1,12 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import Seo from '../components/seo/seo'
 import FolioList from '../components/folio/folio-list'
 import Intro from '../components/intro/intro'
 import Layout from '../components/layout'
 
 const IndexPage = () => (
   <Layout>
-    <Helmet>
-      <title>Gareth Weaver - Front-end Web Designer &amp; Developer</title>
-    </Helmet>
+    <Seo />
     <Intro />
     <FolioList />
   </Layout>

@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
+import Seo from '../components/seo/seo'
 import FolioDetail from '../components/folio/folio-detail'
 import FolioList from '../components/folio/folio-list'
 
@@ -14,12 +15,11 @@ const FolioTemplate = ({ data }) => {
     <Layout>
       <Helmet>
         <body class="p-folio" />
-        <title>{frontmatter.meta.title}</title>
-        <meta name="description" content={frontmatter.meta.description} />
-        <meta property="og:title" content={frontmatter.meta.title} />
-        <meta property="og:description" content={frontmatter.meta.description} />
-        <meta property="og:url" content={`https://www.garethweaver.com/${frontmatter.url}`} />
       </Helmet>
+      <Seo
+        title={frontmatter.meta.title}
+        description={frontmatter.meta.description}
+        path={frontmatter.url} />
       <FolioDetail data={frontmatter} />
       <FolioList />
     </Layout>
