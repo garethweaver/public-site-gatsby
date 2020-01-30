@@ -1,69 +1,43 @@
-import React, { Component } from 'react'
-import { Link, withPrefix } from 'gatsby'
+import React from 'react'
+import { Link } from 'gatsby'
 import iconCodepen from 'images/icons/codepen.svg'
+import FolioThumbnail from './folio-thumbnail'
 import './folio-item.sass'
 
-class FolioItem extends Component {
-
-  getImageType(type) {
-    return this.props.folioItem.frontmatter.thumb.filter(img => img.type === type)[0] || false
-  }
-
-  thumbnail() {
-    return this.getImageType('jpg') ?
-      <picture>
-        <source
-          type="image/webp"
-          srcSet={withPrefix(`/images/thumb/${this.getImageType('webp').name}`)} />
+function externalLink(data) {
+  return (
+    <a
+      href={data.url}
+      target="_blank"
+      rel="noopener noreferrer">
+      <FolioThumbnail data={data} />
+      <span className="FolioItem__icon">
         <img
-          className="u-respond"
-          src={withPrefix(`/images/thumb/${this.getImageType('jpg').name}`)}
-          alt={this.props.folioItem.frontmatter.title} />
-      </picture>
-      :
-      <picture>
-        <img
-          className="u-respond"
-          src={withPrefix(`/images/thumb/${this.getImageType('gif').name}`)}
-          alt={this.props.folioItem.frontmatter.title} />
-      </picture>
-  }
+          src={iconCodepen}
+          alt="Codepen icon" />
+      </span>
+    </a>
+  )
+}
 
-  externalLink() {
-    return (
-      <a
-        href={this.props.folioItem.frontmatter.url}
-        target="_blank"
-        rel="noopener noreferrer">
-        {this.thumbnail()}
-        <span className="FolioItem__icon">
-          <img
-            src={iconCodepen}
-            alt="Codepen icon" />
-        </span>
-      </a>
-    )
-  }
+function internalLink(data) {
+  return (
+    <Link to={data.url}>
+      <FolioThumbnail data={data} />
+    </Link>
+  )
+}
 
-  internalLink() {
-    return (
-      <Link to={this.props.folioItem.frontmatter.url}>
-        {this.thumbnail()}
-      </Link>
-    )
-  }
-
-  render() {
-    return (
-      <div className="FolioItem">
-        {this.props.folioItem.frontmatter.external ?
-          this.externalLink() :
-          this.internalLink()
-        }
-      </div>
-    )
-  }
-
+function FolioItem({ folioItem }) {
+  const data = folioItem.frontmatter
+  return (
+    <div className="FolioItem">
+      {data.external ?
+        externalLink(data) :
+        internalLink(data)
+      }
+    </div>
+  )
 }
 
 export default FolioItem

@@ -3,26 +3,28 @@ import Helmet from 'react-helmet'
 import { Link } from 'gatsby'
 import Layout from 'components/layout'
 
-const NotFoundPage = () => (
-  <Layout>
-    <Helmet>
-      <body class="p-folio" />
-      <title>G4r0th We4ver - Front-end Web Designer &amp; Developer</title>
-    </Helmet>
-    <div className="FolioDetail u-wrap">
-      <div className="u-inner">
-        <div className="folio-text folio-block">
-          <div className="FourOhFour">
-            <h1>404 :(</h1>
-            <p>You just hit a route that doesn't exist&hellip; the sadness. It's probably best to start again.</p>
-            <Link to="/" className="logo MenuItem">
-              Head home
-            </Link>
+function NotFoundPage() {
+  return (
+    <Layout>
+      <Helmet>
+        <body class="p-folio" />
+        <title>G4r0th We4ver - Front-end Web Designer &amp; Developer</title>
+      </Helmet>
+      <div className="FolioDetail u-wrap">
+        <div className="u-inner">
+          <div className="folio-text folio-block">
+            <div className="FourOhFour">
+              <h1>404 :(</h1>
+              <p>You just hit a route that doesn't exist&hellip; the sadness. It's probably best to start again.</p>
+              <Link to="/" className="logo MenuItem">
+                Head home
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </Layout>
-)
+    </Layout>
+  )
+}
 
 export default NotFoundPage

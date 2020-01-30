@@ -1,58 +1,54 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { SHOW_MODAL_HIDE_MOB_MENU } from 'store/actions'
 
-class MenuItem extends Component {
+function linkContent(data, showIcon) {
+  const Icon = data.icon
+  return (
+    <>
+      {showIcon &&
+        <span className="MenuItem__icon">
+          <Icon />
+        </span>
+      }
+      <span className="MenuItem__text">{data.title}</span>
+    </>
+  )
+}
 
-  linkContent() {
-    const Icon = this.props.data.icon
-    return (
-      <>
-        {this.props.showIcon &&
-          <span className="MenuItem__icon">
-            <Icon />
-          </span>
-        }
-        <span className="MenuItem__text">{this.props.data.title}</span>
-      </>
-    )
-  }
+function externalLink(data, showIcon) {
+  return (
+    <a
+      href={data.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="MenuItem"
+      aria-label={data.title}>
+      {linkContent(data, showIcon)}
+    </a>
+  )
+}
 
-  externalLink() {
-    return (
-      <a
-        href={this.props.data.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="MenuItem"
-        aria-label={this.props.data.title}>
-        {this.linkContent()}
-      </a>
-    )
-  }
+function modalButton(data, showIcon, showModal) {
+  return (
+    <button
+      onClick={showModal}
+      className="MenuItem"
+      aria-label="Open Twitter modal">
+      {linkContent(data, showIcon)}
+    </button>
+  )
+}
 
-  modalButton() {
-    return (
-      <button
-        onClick={this.props.showModal}
-        className="MenuItem"
-        aria-label="Open Twitter modal">
-        {this.linkContent()}
-      </button>
-    )
-  }
-
-  render() {
-    return (
-      <>
-        {this.props.data.link ?
-          this.externalLink() :
-          this.modalButton()
-        }
-      </>
-    )
-  }
-
+function MenuItem({ data, showIcon, showModal }) {
+  return (
+    <>
+      {data.link ?
+        externalLink(data, showIcon) :
+        modalButton(data, showIcon, showModal)
+      }
+    </>
+  )
 }
 
 const mapDispatchToProps = dispatch => {

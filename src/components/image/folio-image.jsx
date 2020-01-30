@@ -56,7 +56,7 @@ class FolioImage extends Component {
     let imagePadding = typeof window !== 'undefined'
       ? (image.height / image.width) * 100 + '%'
       : '100%'
-     this.setState({ imagePadding })
+    this.setState({ imagePadding })
   }
 
   lazyLoadImage() {
