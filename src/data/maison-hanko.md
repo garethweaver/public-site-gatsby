@@ -16,22 +16,22 @@ images:
 - - resolution: mobile
     type: jpg
     name: maison-hanko-1-sm.jpg
-    height: 2298
+    height: 2042
     width: 600
   - resolution: mobile
     type: webp
     name: maison-hanko-1-sm.webp
-    height: 2298
+    height: 2042
     width: 600
   - resolution: desktop
     type: jpg
     name: maison-hanko-1-lg.jpg
-    height: 4596
+    height: 4083
     width: 1200
   - resolution: desktop
     type: webp
     name: maison-hanko-1-lg.webp
-    height: 4596
+    height: 4083
     width: 1200
 - - resolution: mobile
     type: jpg
