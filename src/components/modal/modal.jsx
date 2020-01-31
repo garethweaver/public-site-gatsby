@@ -32,10 +32,10 @@ class Modal extends Component {
   }
 
   async fetchTweets() {
-    let tweets = await fetch('https://www.garethweaver.com/assets/php/php-tweets/tweets.php')
+    let tweets = await fetch(`${process.env.GATSBY_API_URL}/_tweets`)
     tweets = await tweets.json()
     this.setState({
-      tweets: tweets,
+      tweets,
       loading: false
     })
   }

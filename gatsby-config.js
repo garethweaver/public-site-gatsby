@@ -1,8 +1,10 @@
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: 'Gareth Weaver - Front-end Web Designer & Developer',
     description: 'I\'m a front-end web designer and developer. I\'m always happy to have a chat about websites, hosting, technology or rugby. Why not send me a message?',
-    url: 'http://www.garethweaver.com',
+    url: process.env.PUBLIC_URL,
     image: '/images/img-og.jpg',
   },
   plugins: [
