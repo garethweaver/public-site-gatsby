@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import './tweet.sass'
 
 class Tweet extends Component {
