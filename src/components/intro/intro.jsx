@@ -26,7 +26,7 @@ function Intro() {
             onClick={scrollToFolio}
             href="#portfolio-anchor"
             aria-label="Scroll page to portolio section">
-            View Portfoliodesk
+            View Portfolio
             <img
               className="Intro__scroll-icon"
               src={iconDown}
