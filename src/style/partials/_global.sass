@@ -17,6 +17,9 @@ body
   &.u-no-scroll
     overflow: hidden
 
+  @media (prefers-color-scheme: dark)
+    background: $darkmode
+
 html
   font-size: 16px
 
@@ -53,6 +56,10 @@ h1
   background: $bg
   margin-top: 15px
   padding: 30px 20px 40px
+
+  @media (prefers-color-scheme: dark)
+    background: lighten($darkmode, 5%)
+    color: #efefef
 
   +media-breakpoint-up(md)
     margin-top: 45px

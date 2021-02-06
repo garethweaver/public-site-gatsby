@@ -72,10 +72,17 @@
       transition: height 0.3s
       z-index: 2
 
+      @media (prefers-color-scheme: dark)
+        background: $darkmode
+
 .SiteHeader
   $this: &
   color: $gray-600
   transition: color 0.2s
+
+  @media (prefers-color-scheme: dark)
+    color: white
+
 
   a,
   button

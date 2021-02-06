@@ -50,6 +50,9 @@
     min-height: 800px
     margin-bottom: 40px
 
+    @media (prefers-color-scheme: dark)
+      border-color: $darkmode
+
     &__flex
       height: 100%
       display: flex
@@ -67,6 +70,9 @@
   background: white
   padding-bottom: 40px
   position: relative
+
+  @media (prefers-color-scheme: dark)
+    background: $darkmode
 
   +media-breakpoint-up(md)
     margin-top: -327px
