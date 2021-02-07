@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import Tweet from 'components/tweet/tweet'
 import { HIDE_MODAL } from 'store/actions'
@@ -6,92 +6,76 @@ import iconClose from 'images/icons/times-alt.svg'
 import iconRefresh from 'images/icons/refresh.svg'
 import './modal.sass'
 
-class Modal extends Component {
+const fetchTweets =  async () => {
+  let tweets = await fetch(`${process.env.GATSBY_API_URL}/_tweets`)
+  tweets = await tweets.json()
+  return tweets
+}
 
-  constructor(props){
-    super(props)
-    this.state = {
-      tweets: [],
-      loading: true
+const getTweets = tweets => (
+  tweets.length > 0 ? (
+    <ul className="Modal__tweet-list">
+      {tweets.map((tweet, i) => {
+        return (
+          <Tweet key={i} tweet={tweet} />
+        )
+      })}
+    </ul>
+  ) : (
+    <div className="Modal__spinner">
+      <img
+        src={iconRefresh}
+        alt="Icon loading" />
+    </div>
+  )
+)
+
+const Modal = props => {
+  const [ tweets, setTweets ] = useState([])
+
+  useEffect(() => {
+    const onHandleKeydown = e => {
+      if (e.keyCode === 27) {
+        props.hideModal()
+      }
     }
-  }
 
-  closeModal = (event) => {
-    this.props.hideModal()
-  }
-
-  componentDidMount() {
-    document.addEventListener('keydown', this.handleKeydown)
+    document.addEventListener('keydown', onHandleKeydown)
     document.body.classList.add('u-no-scroll')
-    this.fetchTweets()
-  }
 
-  componentWillUnmount() {
-    document.body.classList.remove('u-no-scroll')
-    document.removeEventListener('keydown', this.handleKeydown)
-  }
-
-  async fetchTweets() {
-    let tweets = await fetch(`${process.env.GATSBY_API_URL}/_tweets`)
-    tweets = await tweets.json()
-    this.setState({
-      tweets,
-      loading: false
-    })
-  }
-
-  getLoader() {
-    return (
-      <div className="Modal__spinner">
-        <img
-          src={iconRefresh}
-          alt="Icon loading" />
-      </div>
-    )
-  }
-
-  getTweets() {
-    return this.state.tweets.length ? (
-      <ul className="Modal__tweet-list">
-        {this.state.tweets.map((tweet, i) => {
-          return (
-            <Tweet key={i} tweet={tweet} />
-          )
-        })}
-      </ul>
-    ) : this.getLoader()
-  }
-
-  handleKeydown = (event) => {
-    if (event.keyCode === 27) {
-      this.closeModal()
+    return () => {
+      document.removeEventListener('keydown', onHandleKeydown)
+      document.body.classList.remove('u-no-scroll')
     }
-  }
+  }, [ props ])
 
-  render() {
-    return (
-      <aside className="Modal">
-        <div className="Modal__wrapper">
-          <button
-            onClick={this.closeModal}
-            aria-label="Close tweets modal"
-            className="Modal__close">
-            <img
-              src={iconClose}
-              alt="Icon close tweets modal" />
-          </button>
-          <div className="Modal__inner a-modal-inner">
-            <header className="Modal__header">
-              <h1>Follow Me</h1>
-              <a href="https://twitter.com/garethdweaver">@garethdweaver</a>
-            </header>
-            {this.getTweets()}
-          </div>
+  useEffect(() => {
+    (async () => {
+      setTweets(await fetchTweets())
+    })()
+  }, [])
+
+  return (
+    <aside className="Modal">
+      <div className="Modal__wrapper">
+        <button
+          onClick={props.hideModal}
+          aria-label="Close tweets modal"
+          className="Modal__close">
+          <img
+            src={iconClose}
+            alt="Icon close tweets modal" />
+        </button>
+        <div className="Modal__inner a-modal-inner">
+          <header className="Modal__header">
+            <h1>Follow Me</h1>
+            <a href="https://twitter.com/garethdweaver">@garethdweaver</a>
+          </header>
+          {getTweets(tweets)}
         </div>
-      </aside>
-    )
-  }
-
+      </div>
+    </aside>
+  )
 }
 
 const mapStateToProps = state => {
