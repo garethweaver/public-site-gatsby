@@ -2,15 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import Tweet from 'components/tweet/tweet'
 import { HIDE_MODAL } from 'store/actions'
+import { fetchTweets } from './helpers'
 import iconClose from 'images/icons/times-alt.svg'
 import iconRefresh from 'images/icons/refresh.svg'
 import './modal.sass'
-
-const fetchTweets =  async () => {
-  let tweets = await fetch(`${process.env.GATSBY_API_URL}/_tweets`)
-  tweets = await tweets.json()
-  return tweets
-}
 
 const getTweets = tweets => (
   tweets.length > 0 ? (
