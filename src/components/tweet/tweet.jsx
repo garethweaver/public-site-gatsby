@@ -21,7 +21,7 @@ const replacements = [
   }
 ]
 
-function doReplacements(rep, tweet) {
+const doReplacements = (rep, tweet) => {
   return tweet.replace(rep.regex, (string) => {
     let url = rep.encode
       ? rep.linkTo + string.replace(rep.encode[0], rep.encode[1])
@@ -30,14 +30,14 @@ function doReplacements(rep, tweet) {
   })
 }
 
-function parseTweet(tweet) {
+const parseTweet = tweet => {
   for (let rep of replacements) {
     tweet = doReplacements(rep, tweet)
   }
   return tweet
 }
 
-function Tweet({ tweet }) {
+const Tweet = ({ tweet }) => {
   return (
     <li className="Tweet">
       <div className="Tweet__image-wrap">

@@ -3,7 +3,7 @@ import FolioSubfooter from './folio-subfooter'
 import FolioImage from 'components/image/folio-image'
 import './folio-detail.sass'
 
-function getItemImages(data) {
+const getItemImages = data => {
   return data.images.map((imageObj, i) => {
     return (
       <div
@@ -17,7 +17,7 @@ function getItemImages(data) {
   })
 }
 
-function getItemMeta(data) {
+const getItemMeta = data => {
   return (
     <ul className="FolioDetail__meta">
       <li dangerouslySetInnerHTML={{__html: data.type}} />
@@ -27,7 +27,7 @@ function getItemMeta(data) {
   )
 }
 
-function FolioDetail({ data }) {
+const FolioDetail = ({ data }) => {
   return (
     <div className="FolioDetail u-wrap">
       <div className="u-inner">
@@ -36,7 +36,9 @@ function FolioDetail({ data }) {
             className="FolioDetail__title"
             dangerouslySetInnerHTML={{__html: data.title}} />
           {getItemMeta(data)}
-          <div dangerouslySetInnerHTML={{__html: data.html}} />
+          <div
+            className="FolioDetail__body"
+            dangerouslySetInnerHTML={{__html: data.html}} />
         </div>
         {getItemImages(data)}
         <FolioSubfooter item={data} />

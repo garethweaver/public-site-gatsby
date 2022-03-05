@@ -4,7 +4,7 @@ import iconCodepen from 'images/icons/codepen.svg'
 import FolioThumbnail from './folio-thumbnail'
 import './folio-item.sass'
 
-function externalLink(data) {
+const externalLink = data => {
   return (
     <a
       href={data.url}
@@ -20,7 +20,7 @@ function externalLink(data) {
   )
 }
 
-function internalLink(data) {
+const internalLink = data => {
   return (
     <Link to={data.url}>
       <FolioThumbnail data={data} />
@@ -28,7 +28,7 @@ function internalLink(data) {
   )
 }
 
-function FolioItem({ folioItem }) {
+const FolioItem = ({ folioItem }) => {
   const data = folioItem.frontmatter
   return (
     <div className="FolioItem">

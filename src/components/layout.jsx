@@ -5,17 +5,15 @@ import Modal from './modal/modal'
 import ModalAnimationWrapper from './modal/modal-animation-wrapper'
 import '../style/screen.sass'
 
-function Layout({ children }) {
-  return (
-    <>
-      <SiteHeader />
-      {children}
-      <SiteFooter />
-      <ModalAnimationWrapper>
-        <Modal />
-      </ModalAnimationWrapper>
-    </>
-  )
-}
+const Layout = ({ children }) => (
+  <>
+    <SiteHeader />
+    {children}
+    <SiteFooter />
+    <ModalAnimationWrapper>
+      <Modal />
+    </ModalAnimationWrapper>
+  </>
+)
 
 export default Layout

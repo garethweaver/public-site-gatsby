@@ -6,7 +6,7 @@ import Seo from 'components/seo/seo'
 import FolioDetail from 'components/folio/folio-detail'
 import FolioList from 'components/folio/folio-list'
 
-function FolioTemplate({ data }) {
+const FolioTemplate = ({ data }) => {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   frontmatter.html = html

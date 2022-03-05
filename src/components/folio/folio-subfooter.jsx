@@ -5,7 +5,7 @@ import IconGithub from 'images/icons/github-alt.inline.svg'
 import IconArrow from 'images/icons/arrow-circle-o-right.inline.svg'
 import './folio-subfooter.sass'
 
-function FolioSubfooter({ item }) {
+const FolioSubfooter = ({ item }) => {
   return (
     <footer className="FolioSubfooter">
       <nav className="FolioSubfooter__nav">

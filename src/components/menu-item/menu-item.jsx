@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { SHOW_MODAL_HIDE_MOB_MENU } from 'store/actions'
 
-function linkContent(data, showIcon) {
+const linkContent = (data, showIcon) => {
   const Icon = data.icon
   return (
     <>
@@ -11,12 +11,14 @@ function linkContent(data, showIcon) {
           <Icon />
         </span>
       }
-      <span className="MenuItem__text">{data.title}</span>
+      <span className="MenuItem__text">
+        {data.title}
+      </span>
     </>
   )
 }
 
-function externalLink(data, showIcon) {
+const externalLink = (data, showIcon) => {
   return (
     <a
       href={data.link}
@@ -29,7 +31,7 @@ function externalLink(data, showIcon) {
   )
 }
 
-function modalButton(data, showIcon, showModal) {
+const modalButton = (data, showIcon, showModal) => {
   return (
     <button
       onClick={showModal}
@@ -40,7 +42,7 @@ function modalButton(data, showIcon, showModal) {
   )
 }
 
-function MenuItem({ data, showIcon, showModal }) {
+const MenuItem = ({ data, showIcon, showModal }) => {
   return (
     <>
       {data.link ?

@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import IconCode from 'images/icons/code.inline.svg'
 import './logo.sass'
 
-function Logo() {
+const Logo = () => {
   return (
     <Link to="/" className="Logo">
       garethweaver.com
