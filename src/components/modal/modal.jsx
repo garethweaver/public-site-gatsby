@@ -42,7 +42,7 @@ const Modal = props => {
       document.removeEventListener('keydown', onHandleKeydown)
       document.body.classList.remove('u-no-scroll')
     }
-  }, [ props ])
+  })
 
   useEffect(() => {
     (async () => {
@@ -64,7 +64,12 @@ const Modal = props => {
         <div className="Modal__inner a-modal-inner">
           <header className="Modal__header">
             <h1>Follow Me</h1>
-            <a href="https://twitter.com/garethdweaver">@garethdweaver</a>
+            <a
+              href="https://twitter.com/garethdweaver"
+              target="_blank"
+              rel="noreferrer">
+              @garethdweaver
+            </a>
           </header>
           {getTweets(tweets)}
         </div>

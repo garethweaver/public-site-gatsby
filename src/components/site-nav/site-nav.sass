@@ -1,0 +1,67 @@
+@import '../../style/modules/base'
+
+.SiteNav
+  flex: 1 0 100%
+
+  +media-breakpoint-up(md)
+    flex: 0 0 auto
+
+  &--closed
+    display: none
+
+  +media-breakpoint-up(md)
+    ul
+      display: flex
+
+    li
+      display: block
+
+    li:last-child .MenuItem
+      padding-right: 0
+
+    &--closed
+      display: block
+
+    .MenuItem__text
+      position: absolute
+      top: 50%
+      right: 102%
+      z-index: 3
+      transform: translateY(-50%)
+      visibility: hidden
+      opacity: 0
+      transition: all 0.2s
+
+    .MenuItem:hover .MenuItem__text
+      visibility: visible
+      opacity: 1
+      right: 110%
+
+    ul
+      margin: 0
+      position: relative
+      height: 42px
+
+.MenuItem
+  width: 100%
+  display: flex
+  align-items: center
+  padding: 10px 0
+
+  &__icon
+    +square(20px)
+    margin-right: 10px
+    transition: border-color 0.3s
+
+    svg
+      +square(100%)
+      display: block
+
+  +media-breakpoint-up(md)
+    width: auto
+    padding: 0 2px
+
+    &__icon
+      +circle-button
+      margin-right: 0
+      display: block

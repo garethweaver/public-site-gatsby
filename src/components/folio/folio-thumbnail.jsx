@@ -1,11 +1,11 @@
 import React from 'react'
 import { withPrefix } from 'gatsby'
 
-function getImageType(thumb, type) {
+const getImageType = (thumb, type) => {
   return thumb.filter(img => img.type === type)[0] || false
 }
 
-function FolioThumbnail({ data }) {
+const FolioThumbnail = ({ data }) => {
   return getImageType(data.thumb, 'jpg') ?
     <picture>
       <source

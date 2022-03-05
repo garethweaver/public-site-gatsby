@@ -1,33 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { SHOW_MOB_MENU, HIDE_MOB_MENU } from 'store/actions'
-import MenuItem from 'components/menu-item/menu-item'
-import MENU_DATA from 'data/menu'
+import SiteNav from 'components/site-nav/site-nav'
 import Logo from './logo'
 import iconBars from 'images/icons/bars.svg'
 import iconTimes from 'images/icons/times.svg'
 import './site-header.sass'
 
-const getMenuItems = () => {
-  return MENU_DATA.map((item, i) => {
-    return (
-      <li key={i}>
-        <MenuItem data={item} showIcon={true} />
-      </li>
-    )
-  })
-}
-
 const SiteHeader = props => {
   const [ isScrolled, setIsScrolled ] = useState(false)
 
   useEffect(() => {
+    if (document.documentElement.scrollTop > 0)
+      setIsScrolled(true)
+
     const handleOnScroll = e => {
       e.target.documentElement.scrollTop > 0
         ? setIsScrolled(true)
         : setIsScrolled(false)
     }
-    window.addEventListener('scroll', handleOnScroll);
+    window.addEventListener('scroll', handleOnScroll)
   }, [])
 
   const toggleMobileMenu = () => props.mobileMenu
@@ -42,16 +34,14 @@ const SiteHeader = props => {
           <Logo />
           <button
             onClick={toggleMobileMenu}
-            className="SiteHeader__toggle d-md-none"
+            className="SiteHeader__toggle"
             aria-label="Toggle mobile menu open closed">
             <img
               className="SiteHeader__toggle-icon"
               src={props.mobileMenu ? iconTimes : iconBars}
               alt="icon" />
           </button>
-          <nav className={`SiteHeader__nav ${props.mobileMenu ? 'SiteHeader__nav--open' : 'SiteHeader__nav--closed'}`}>
-            <ul className="u-list-unstyled">{getMenuItems()}</ul>
-          </nav>
+          <SiteNav />
         </div>
       </div>
     </header>

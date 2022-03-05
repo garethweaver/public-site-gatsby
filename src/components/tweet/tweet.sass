@@ -1,14 +1,21 @@
 .Tweet
+  display: flex
+  margin: 20px 0
+
   &__image-wrap
-    width: 40px
+    width: 50px
     flex: 1 1 auto
     margin-right: 20px
 
   &__image
-    width: 40px
-    height: 40px
+    width: 100%
     display: block
     border-radius: 50%
 
   &__text
     width: 100%
+    margin: 0
+
+  @at-root & + &
+    border-top: 1px solid rgba(white, 0.15)
+    padding-top: 20px

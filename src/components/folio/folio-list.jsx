@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import FolioItem from './folio-item'
 import './folio-list.sass'
 
-function getFolioItems(items) {
+const getFolioItems = items => {
   return items.map((folioItem, i) => {
     return (
       <FolioItem
@@ -13,7 +13,7 @@ function getFolioItems(items) {
   })
 }
 
-function FolioList() {
+const FolioList = () => {
   const { allMarkdownRemark } = useStaticQuery(
     graphql`
       query {
@@ -43,9 +43,9 @@ function FolioList() {
   )
   return (
     <div className="u-wrap">
-      <div className="FolioList">
+      <nav className="FolioList">
         {getFolioItems(allMarkdownRemark.edges)}
-      </div>
+      </nav>
     </div>
   )
 }

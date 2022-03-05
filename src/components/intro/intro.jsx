@@ -3,19 +3,19 @@ import IntroImage from 'images/img-desk.inline.svg'
 import iconDown from 'images/icons/level-down.svg'
 import './intro.sass'
 
-function scrollToFolio(event) {
+const scrollToFolio = event => {
   event.preventDefault()
   let elem = document.getElementById('portfolio-anchor')
   elem.scrollIntoView({ block: 'start', behavior: 'smooth' })
 }
 
-function Intro() {
+const Intro = () => {
   return (
     <div className="Intro">
       <div className="Intro__flex">
         <div className="Intro__flex-center">
           <h1>
-            Code &amp;<br />Development
+            Development &amp;<br />Engineering
           </h1>
           <h2>
             Let’s talk about websites, apps, rugby or just the weather.
