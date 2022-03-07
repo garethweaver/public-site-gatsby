@@ -53,7 +53,7 @@ images:
     name: maison-hanko-2-lg.webp
     height: 2800
     width: 1200
-next_page: /in2touch
+next_page: /sipa-beer
 meta:
   title: Gareth Weaver - Maison Hanko
   description: A static site built with GatsbyJS to showcase top Japanese
