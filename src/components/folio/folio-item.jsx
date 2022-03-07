@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import iconCodepen from 'images/icons/codepen.svg'
+import iconGlobe from 'images/icons/globe.svg'
 import FolioThumbnail from './folio-thumbnail'
 import './folio-item.sass'
 
@@ -13,7 +13,7 @@ const externalLink = data => {
       <FolioThumbnail data={data} />
       <span className="FolioItem__icon">
         <img
-          src={iconCodepen}
+          src={iconGlobe}
           alt="Codepen icon" />
       </span>
     </a>
