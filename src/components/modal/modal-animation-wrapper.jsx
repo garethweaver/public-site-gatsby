@@ -3,18 +3,17 @@ import { connect } from 'react-redux'
 import { useTransition, animated } from 'react-spring'
 
 const ModalAnimationWrapper = ({ modal, children }) => {
-  const transitions = useTransition(modal, null, {
+  const transitions = useTransition(modal, {
     from: { transform: 'translateY(-100%)' },
     enter: { transform: 'translateY(0%)' },
     leave: { transform: 'translateY(-100%)' },
   })
 
-  return transitions.map(({ item, key, props }) => (
+  return transitions((styles, item) => (
     item && (
       <animated.div
         className="ModalAnimationWrapper"
-        key={key}
-        style={props}>
+        style={styles}>
         {children}
       </animated.div>
     )
