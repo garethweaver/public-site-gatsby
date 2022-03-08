@@ -42,15 +42,13 @@
 
 .SiteHeader
   $this: &
-  color: $gray-600
-  transition: color 0.2s
 
   a,
   button
-    color: inherit
-
+    transition: color 0.2s
+    color: $gray-600
     &:hover
-      color: inherit
+      color: $gray-600
 
   svg path
     transition: fill 0.2s
@@ -58,25 +56,37 @@
 
 
   +media-breakpoint-up(md)
-    color: white
+    a,
+    button
+      color: white
+      &:hover
+        color: white
 
     svg path
       fill: white
 
     &.SiteHeader--is-scrolled
+      a,
+      button
+        color: $gray-600
+        &:hover
+          color: $gray-600
+
+      svg path
+        fill: $gray-600
+
       #{$this}__bg
         height: 70px
 
       .u-wrap
         padding: 0 40px
 
-      color: $gray-600
-
-      svg path
-        fill: $gray-600
-
     @at-root .p-folio &:not(.SiteHeader--is-scrolled)
-      color: $gray-800
+      a,
+      button
+        color: $gray-800
+        &:hover
+          color: $gray-800
 
       svg path
         fill: $gray-800
