@@ -1,4 +1,4 @@
-# My older public site built with GatsbyJS
+# My older public site built with GatsbyJS [2018]
 
 * [View new site built with AstroJS live](http://www.garethweaver.com)
 * [View new site built with AstroJS repo](https://github.com/garethweaver/public-site-astro)
